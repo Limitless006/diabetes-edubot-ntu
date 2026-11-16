@@ -1,0 +1,312 @@
+[
+  {
+    "id": "medlineplus-t2d-overview",
+    "organization": "MedlinePlus (NIH)",
+    "title": "Diabetes Type 2 - MedlinePlus",
+    "url": "https://medlineplus.gov/diabetestype2.html",
+    "topic_category": "Basic Concepts & Overview",
+    "key_verified_facts": [
+      "Type 2 diabetes is the most common form of diabetes where the body cannot use insulin properly (insulin resistance).",
+      "Over time, the pancreas cannot make enough insulin to keep blood glucose at normal levels.",
+      "Complications can affect the heart, blood vessels, nerves, eyes, and kidneys.",
+      "Healthy eating, physical activity, and weight loss are foundational to managing or preventing Type 2 diabetes."
+    ]
+  },
+  {
+    "id": "medlineplus-ency-article",
+    "organization": "MedlinePlus (NIH)",
+    "title": "Type 2 diabetes - Medical Encyclopedia",
+    "url": "https://medlineplus.gov/ency/article/000313.htm",
+    "topic_category": "Pathophysiology & Diagnostics",
+    "key_verified_facts": [
+      "People with Type 2 diabetes may have no symptoms for years; it develops slowly.",
+      "Fasting blood sugar of 126 mg/dL or higher on two separate tests confirms diabetes.",
+      "Random blood sugar above 200 mg/dL with classic symptoms indicates diabetes.",
+      "Chronic high glucose leads to peripheral neuropathy, retinopathy, nephropathy, and peripheral arterial disease."
+    ]
+  },
+  {
+    "id": "medlineplus-self-care",
+    "organization": "MedlinePlus (NIH)",
+    "title": "Type 2 diabetes - self-care",
+    "url": "https://medlineplus.gov/ency/patientinstructions/000328.htm",
+    "topic_category": "Prevention & Self-Care",
+    "key_verified_facts": [
+      "Daily self-care includes balanced meal planning, regular physical activity, and checking blood sugar as advised.",
+      "Foot care is essential: check feet daily for cuts, blisters, and redness; keep skin soft and dry carefully between toes.",
+      "Target blood pressure for most individuals with diabetes is under 130/80 mmHg.",
+      "Managing cholesterol and quitting smoking dramatically cut cardiovascular risk."
+    ]
+  },
+  {
+    "id": "medlineplus-hba1c-test",
+    "organization": "MedlinePlus (NIH)",
+    "title": "Hemoglobin A1C (HbA1c) Test",
+    "url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+    "topic_category": "Diagnostic Testing",
+    "key_verified_facts": [
+      "HbA1c measures average blood glucose over the past 2 to 3 months by evaluating glycated hemoglobin in red blood cells.",
+      "Normal: Below 5.7%.",
+      "Prediabetes: 5.7% to 6.4%.",
+      "Diabetes: 6.5% or higher on two separate occasions.",
+      "Target for many non-pregnant adults with diabetes is below 7.0%."
+    ]
+  },
+  {
+    "id": "medlineplus-oral-meds",
+    "organization": "MedlinePlus (NIH)",
+    "title": "Type 2 diabetes - oral medicines",
+    "url": "https://medlineplus.gov/ency/patientinstructions/000989.htm",
+    "topic_category": "Medication Education",
+    "key_verified_facts": [
+      "Oral diabetes medicines help lower blood glucose when lifestyle measures alone are insufficient.",
+      "Metformin is usually the first oral medication prescribed; it reduces liver glucose output and enhances insulin sensitivity.",
+      "Different classes work in different ways: stimulating the pancreas, blocking carbohydrate absorption, or eliminating glucose in urine.",
+      "Patients must take medications exactly as prescribed and report any hypoglycemia or side effects to their doctor."
+    ]
+  },
+  {
+    "id": "medlineplus-ask-doctor",
+    "organization": "MedlinePlus (NIH)",
+    "title": "Type 2 diabetes - what to ask your doctor",
+    "url": "https://medlineplus.gov/ency/patientinstructions/000217.htm",
+    "topic_category": "Doctor Consultation & Monitoring",
+    "key_verified_facts": [
+      "Routine visits should review HbA1c, blood pressure, weight, and medication effectiveness.",
+      "Annual checks include dilated eye examinations, microalbumin urine tests, and comprehensive foot exams.",
+      "Patients should prepare questions about individualized target ranges, sick-day rules, and emergency symptoms."
+    ]
+  },
+  {
+    "id": "who-diabetes-factsheet",
+    "organization": "World Health Organization (WHO)",
+    "title": "Diabetes Fact Sheet - WHO",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/diabetes",
+    "topic_category": "Global Health & Epidemiology",
+    "key_verified_facts": [
+      "Type 2 diabetes accounts for over 95% of all people with diabetes worldwide.",
+      "It was previously known as non-insulin-dependent or adult-onset diabetes, but is now seen increasingly in children and adolescents.",
+      "A healthy diet, regular physical activity, maintaining normal body weight, and avoiding tobacco can prevent or delay Type 2 diabetes.",
+      "Diabetes is a leading cause of blindness, kidney failure, heart attacks, stroke, and lower limb amputation."
+    ]
+  },
+  {
+    "id": "who-diabetes-health-topic",
+    "organization": "World Health Organization (WHO)",
+    "title": "Diabetes Health Topic - WHO",
+    "url": "https://www.who.int/health-topics/diabetes",
+    "topic_category": "Basic Concepts & Complications",
+    "key_verified_facts": [
+      "Diabetes is a chronic, metabolic disease characterized by elevated levels of blood glucose.",
+      "Over time, diabetes damages the heart, blood vessels, eyes, kidneys, and nerves.",
+      "Access to essential medicines, glucose monitoring, and patient education are key to preventing premature mortality."
+    ]
+  },
+  {
+    "id": "who-diabetes-qa",
+    "organization": "World Health Organization (WHO)",
+    "title": "Diabetes Q&A - WHO",
+    "url": "https://www.who.int/news-room/questions-and-answers/item/diabetes",
+    "topic_category": "Classification & Questions",
+    "key_verified_facts": [
+      "Type 1 diabetes involves deficient insulin production and requires daily administration of insulin.",
+      "Type 2 diabetes results from the body's ineffective use of insulin, strongly linked to excess body weight and physical inactivity.",
+      "Gestational diabetes involves hyperglycemia recognized during pregnancy, associated with complications to both mother and infant."
+    ]
+  },
+  {
+    "id": "cdc-about-t2d",
+    "organization": "Centers for Disease Control and Prevention (CDC)",
+    "title": "About Type 2 Diabetes - CDC",
+    "url": "https://www.cdc.gov/diabetes/about/about-type-2-diabetes.html",
+    "topic_category": "Pathophysiology & Disease Process",
+    "key_verified_facts": [
+      "In Type 2 diabetes, cells don't respond normally to insulin; this is called insulin resistance.",
+      "The pancreas creates more insulin to compensate until it cannot keep up, resulting in elevated blood sugar.",
+      "More than 38 million Americans have diabetes, and about 90% to 95% of them have Type 2 diabetes."
+    ]
+  },
+  {
+    "id": "cdc-signs-symptoms",
+    "organization": "Centers for Disease Control and Prevention (CDC)",
+    "title": "Symptoms of Diabetes - CDC",
+    "url": "https://www.cdc.gov/diabetes/signs-symptoms/index.html",
+    "topic_category": "Symptoms & Warning Signs",
+    "key_verified_facts": [
+      "Classic symptoms: urinating often (especially at night), feeling very thirsty, losing weight without trying, and feeling very hungry.",
+      "Other symptoms include blurry vision, numb or tingling hands or feet, very dry skin, and slow-healing sores.",
+      "Symptoms of Type 2 diabetes often take several years to develop and can be mild enough to go unnoticed."
+    ]
+  },
+  {
+    "id": "cdc-risk-factors",
+    "organization": "Centers for Disease Control and Prevention (CDC)",
+    "title": "Diabetes Risk Factors - CDC",
+    "url": "https://www.cdc.gov/diabetes/risk-factors/index.html",
+    "topic_category": "Risk Factors",
+    "key_verified_facts": [
+      "Risk factors include being overweight or obese, being 35 or older, having a parent or sibling with Type 2 diabetes.",
+      "Being physically active less than 3 times a week is a significant modifiable risk factor.",
+      "History of gestational diabetes or delivering a baby over 9 pounds increases lifetime diabetes risk.",
+      "African American, Hispanic/Latino, American Indian, Asian American, and Pacific Islander groups face higher risk."
+    ]
+  },
+  {
+    "id": "cdc-prevention",
+    "organization": "Centers for Disease Control and Prevention (CDC)",
+    "title": "Preventing Type 2 Diabetes - CDC",
+    "url": "https://www.cdc.gov/diabetes/prevention-type-2/index.html",
+    "topic_category": "Prevention & Lifestyle",
+    "key_verified_facts": [
+      "Losing 5% to 7% of starting body weight can cut Type 2 diabetes risk by more than half (58%, and 71% for age 60+).",
+      "Getting at least 150 minutes of moderate physical activity per week is a cornerstone of prevention.",
+      "Eating healthy foods with smaller portions helps maintain weight loss and normal glucose levels."
+    ]
+  },
+  {
+    "id": "cdc-prediabetes",
+    "organization": "Centers for Disease Control and Prevention (CDC)",
+    "title": "Prediabetes – Prevent Type 2 Diabetes - CDC",
+    "url": "https://www.cdc.gov/diabetes/prevention-type-2/prediabetes-prevent-type-2.html",
+    "topic_category": "Prediabetes & Reversal",
+    "key_verified_facts": [
+      "Prediabetes means blood sugar levels are higher than normal, but not high enough yet to be diagnosed as Type 2 diabetes.",
+      "More than 1 in 3 US adults have prediabetes, and over 80% do not know they have it.",
+      "Prediabetes can be reversed through structured lifestyle change programs."
+    ]
+  },
+  {
+    "id": "cdc-testing",
+    "organization": "Centers for Disease Control and Prevention (CDC)",
+    "title": "Diabetes Testing - CDC",
+    "url": "https://www.cdc.gov/diabetes/diabetes-testing/index.html",
+    "topic_category": "Diagnostic Testing",
+    "key_verified_facts": [
+      "Fasting blood sugar test: Normal < 100 mg/dL, Prediabetes 100-125 mg/dL, Diabetes 126 mg/dL or higher.",
+      "A1C test: Normal < 5.7%, Prediabetes 5.7%-6.4%, Diabetes 6.5% or higher.",
+      "Glucose tolerance test: Normal < 140 mg/dL, Prediabetes 140-199 mg/dL, Diabetes 200 mg/dL or higher.",
+      "Random blood sugar: 200 mg/dL or higher with symptoms points to diabetes."
+    ]
+  },
+  {
+    "id": "cdc-complications",
+    "organization": "Centers for Disease Control and Prevention (CDC)",
+    "title": "Put the Brakes on Diabetes Complications - CDC",
+    "url": "https://www.cdc.gov/diabetes/prevention-type-2/stop-diabetes-complications.html",
+    "topic_category": "Complications Prevention (ABCs)",
+    "key_verified_facts": [
+      "The ABCs of diabetes management: A = A1C test, B = Blood pressure (< 130/80), C = Cholesterol management, s = Stop smoking.",
+      "Keeping blood sugar in target range helps protect kidneys, vision, nerves, and heart.",
+      "Annual kidney, eye, and dental exams detect complications early before symptoms appear."
+    ]
+  },
+  {
+    "id": "nhs-t2d-overview",
+    "organization": "National Health Service (NHS)",
+    "title": "Type 2 diabetes Overview - NHS",
+    "url": "https://www.nhs.uk/conditions/type-2-diabetes/",
+    "topic_category": "Clinical Overview & Care",
+    "key_verified_facts": [
+      "Type 2 diabetes is a common condition that causes the level of glucose in the blood to become too high.",
+      "It is caused by problems with the hormone insulin and is often linked to being overweight or inactive, or having family history.",
+      "A lifelong condition, it can affect everyday life, but healthy eating and regular exercise help keep blood glucose stable."
+    ]
+  },
+  {
+    "id": "nhs-what-is-t2d",
+    "organization": "National Health Service (NHS)",
+    "title": "What is type 2 diabetes? - NHS",
+    "url": "https://www.nhs.uk/conditions/type-2-diabetes/what-is-type-2-diabetes/",
+    "topic_category": "Basic Concepts",
+    "key_verified_facts": [
+      "Insulin is made by the pancreas and controls the amount of glucose in the blood.",
+      "In Type 2 diabetes, the pancreas does not produce enough insulin or the body becomes resistant to it.",
+      "Without treatment, high glucose levels can damage blood vessels and lead to serious heart and nerve problems."
+    ]
+  },
+  {
+    "id": "nhs-symptoms",
+    "organization": "National Health Service (NHS)",
+    "title": "Symptoms of type 2 diabetes & Urgent Advice - NHS",
+    "url": "https://www.nhs.uk/conditions/type-2-diabetes/symptoms/",
+    "topic_category": "Symptoms & Emergency Guidance",
+    "key_verified_facts": [
+      "Symptoms include peeing more than usual (especially at night), feeling thirsty all the time, feeling very tired, and losing weight without trying.",
+      "Itching around the penis or vagina, cuts taking longer to heal, and blurred vision are common.",
+      "Urgent medical attention is required if there is severe vomiting, rapid breathing, confusion, or fruity-smelling breath."
+    ]
+  },
+  {
+    "id": "nhs-treatment",
+    "organization": "National Health Service (NHS)",
+    "title": "Treatment & Lifestyle for type 2 diabetes - NHS",
+    "url": "https://www.nhs.uk/conditions/type-2-diabetes/treatment/",
+    "topic_category": "Treatment & Nutrition",
+    "key_verified_facts": [
+      "Initial management focuses on healthy food choices, keeping active, and losing weight.",
+      "Medications like Metformin and other tablets are introduced if lifestyle alone does not reach targets.",
+      "Some individuals eventually need insulin injections to keep blood glucose controlled.",
+      "Annual diabetic eye screening (retinal photography) and foot exams are standard."
+    ]
+  },
+  {
+    "id": "nhs-dka",
+    "organization": "National Health Service (NHS)",
+    "title": "Diabetic ketoacidosis (DKA) - NHS",
+    "url": "https://www.nhs.uk/conditions/diabetic-ketoacidosis/",
+    "topic_category": "Emergency Red Flags",
+    "key_verified_facts": [
+      "DKA is a life-threatening emergency caused by a severe lack of insulin leading to ketone buildup.",
+      "Symptoms include fruity-smelling breath, extreme thirst, frequent urination, deep rapid breathing, nausea, vomiting, abdominal pain, and confusion.",
+      "Requires immediate emergency hospital treatment with intravenous fluids, insulin, and potassium."
+    ]
+  },
+  {
+    "id": "niddk-what-is-t2d",
+    "organization": "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+    "title": "Type 2 Diabetes - NIDDK",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+    "topic_category": "Pathology & In-Depth Clinical Insight",
+    "key_verified_facts": [
+      "Genes play a significant role in Type 2 diabetes by affecting insulin production and cellular response.",
+      "Excess visceral fat in the abdomen is directly linked to insulin resistance.",
+      "Type 2 diabetes cannot be cured permanently, but some people achieve remission with significant sustained weight loss."
+    ]
+  },
+  {
+    "id": "niddk-risk-factors",
+    "organization": "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+    "title": "Risk Factors for Type 2 Diabetes - NIDDK",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/risk-factors-type-2-diabetes",
+    "topic_category": "Epidemiology & Risk Factors",
+    "key_verified_facts": [
+      "Individuals 35 and older, or those with BMI >= 25 (>= 23 for Asian Americans), should be screened regularly.",
+      "Having low HDL cholesterol below 35 mg/dL or high triglycerides above 250 mg/dL increases susceptibility.",
+      "PCOS (polycystic ovary syndrome) is a major metabolic risk factor in women."
+    ]
+  },
+  {
+    "id": "ada-about-t2d",
+    "organization": "American Diabetes Association (ADA)",
+    "title": "Understanding Type 2 Diabetes - ADA",
+    "url": "https://diabetes.org/about-diabetes/type-2",
+    "topic_category": "Standards of Care & Myths",
+    "key_verified_facts": [
+      "Type 2 diabetes occurs when the body does not use insulin properly, causing high blood sugar.",
+      "Myth: Eating sugar alone causes diabetes. Fact: T2D is caused by a mix of genetics and lifestyle; sugary drinks contribute by adding excess weight.",
+      "Myth: Needing insulin is a failure. Fact: Beta-cell function naturally declines over time, making insulin a safe and appropriate next step."
+    ]
+  },
+  {
+    "id": "ada-living-t2d",
+    "organization": "American Diabetes Association (ADA)",
+    "title": "Living with Type 2 Diabetes - ADA",
+    "url": "https://diabetes.org/living-with-diabetes/type-2",
+    "topic_category": "Patient Self-Care & Nutrition",
+    "key_verified_facts": [
+      "The Diabetes Plate Method is the gold standard visual guide: 50% non-starchy vegetables, 25% lean protein, 25% quality carbs.",
+      "Carbohydrates are essential; eliminating all carbs is not recommended—focus on portion sizes and whole foods with fiber.",
+      "Ongoing self-management education empowers patients to prevent long-term microvascular and macrovascular complications."
+    ]
+  }
+]

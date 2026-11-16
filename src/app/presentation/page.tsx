@@ -173,7 +173,7 @@ export default function PresentationPage() {
         ? 'المساعد الطبي الذكي للتثقيف بمرض السكري من النوع الثاني'
         : 'Type 2 Diabetes Educational Assistant — Group 01',
       subtitle: isAr
-        ? 'منظومة ذكاء اصطناعي سريرية رصينة مقيدة بـ 25 مصدراً دولياً ومحصنة ضد الهلوسة الطبية'
+        ? 'منظومة ذكاء اصطناعي سريرية رصينة مقيدة بـ 25 مصدراً دولياً معتمداً'
         : 'Evidence-Grounded Clinical AI Prototype for Patient Education & Misinformation Defense',
       speakerNotes: isAr
         ? 'نبدأ العرض بالترحيب بلجنة التحكيم الموقرة، والتعريف بالجامعة التقنية الشمالية وفريق Group 01، ثم إطلاق رسالة المشروع كحل تثقيفي سريري رصين.'
@@ -239,7 +239,7 @@ export default function PresentationPage() {
           <p className="text-xs sm:text-base text-slate-300 max-w-3xl mx-auto mb-6 font-light leading-relaxed">
             {isAr
               ? 'نظام ذكاء اصطناعي سريري هجين مقيد بنسبة 100% بـ 25 مصدراً طبياً عالمياً معتمداً، محصن ضد أخطاء الجرعات والتشخيص، ومبرمج لدعم المريض باللهجة الدارجة ورفع الوعي الصحي المجتمعي.'
-              : 'Evidence-grounded dual-engine clinical AI prototype strictly bounded by 25 authoritative health organizations. Zero hallucination, safe triage, and native dialect fluency.'}
+              : 'Evidence-grounded dual-engine clinical AI prototype strictly bounded by 25 authoritative health organizations. Robust clinical boundaries, safe triage, and native dialect fluency.'}
           </p>
 
           {/* Student Names (Pure Names, No Roles) */}

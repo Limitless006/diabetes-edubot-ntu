@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Clinical Safety Badge */}
           <div className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-            <span>{isAr ? 'صفر هلوسة طبية' : 'Zero Hallucination'}</span>
+            <span>{isAr ? 'موثوق سريرياً • 25 مصدراً' : 'Evidence-Grounded • 25 Sources'}</span>
           </div>
         </div>
 

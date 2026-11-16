@@ -3,9 +3,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import {
-  Sparkles,
-  ListOrdered,
-  Droplet,
   ShieldCheck,
   Award,
   CheckCircle2,
@@ -15,14 +12,12 @@ import {
 
 interface WelcomeHeroProps {
   language: 'ar' | 'en';
-  onOpenBenchmark: () => void;
-  onOpenGlucometer: () => void;
+  onOpenBenchmark?: () => void;
+  onOpenGlucometer?: () => void;
 }
 
 export const WelcomeHero: React.FC<WelcomeHeroProps> = ({
   language,
-  onOpenBenchmark,
-  onOpenGlucometer,
 }) => {
   const isAr = language === 'ar';
 
@@ -32,7 +27,7 @@ export const WelcomeHero: React.FC<WelcomeHeroProps> = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -14 }}
       transition={{ duration: 0.3 }}
-      className="max-w-3xl mx-auto my-auto py-8 sm:py-12 px-3 text-center flex flex-col items-center justify-center"
+      className="max-w-3xl mx-auto my-auto py-8 sm:py-14 px-3 text-center flex flex-col items-center justify-center"
     >
       {/* 3D Floating University Crest Emblem */}
       <motion.div
@@ -76,31 +71,6 @@ export const WelcomeHero: React.FC<WelcomeHeroProps> = ({
           ? 'منظومة ذكاء اصطناعي سريرية رصينة مقيدة بـ 25 مصدراً دولياً معتمداً (WHO, CDC, ADA, NIH, NHS)، محصنة بنسبة 100% ضد الهلوسة الطبية ومبرمجة للإجابة عن أسئلتك بالفصحى واللهجة العراقية الدارجة بأعلى معايير الأمان.'
           : 'Clinical, zero-hallucination AI system strictly bounded by 25 authoritative health organizations. Ready to answer your glucose, diet, and clinical questions in Standard Arabic and Iraqi dialect.'}
       </p>
-
-      {/* Primary Action Buttons */}
-      <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-        {/* 15 Benchmark Questions Button */}
-        <motion.button
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          onClick={onOpenBenchmark}
-          className="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-teal-500/20 transition-all cursor-pointer"
-        >
-          <ListOrdered className="w-4 h-4" />
-          <span>{isAr ? 'فتح الأسئلة الـ 15 المعتمدة للتقييم' : 'Open 15 Benchmark Questions'}</span>
-        </motion.button>
-
-        {/* Glucometer Simulator Button */}
-        <motion.button
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          onClick={onOpenGlucometer}
-          className="px-5 py-2.5 rounded-2xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-700 dark:text-rose-300 border border-rose-500/30 font-bold text-xs sm:text-sm flex items-center gap-2 transition-all cursor-pointer"
-        >
-          <Droplet className="w-4 h-4 text-rose-500 fill-rose-500" />
-          <span>{isAr ? 'تجربة محاكي جهاز قياس السكر' : 'Interactive Glucometer Simulator'}</span>
-        </motion.button>
-      </div>
 
       {/* Trust Badges */}
       <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] text-slate-500 dark:text-slate-400 font-medium">

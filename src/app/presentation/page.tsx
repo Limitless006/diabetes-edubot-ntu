@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
+import InteractiveLivingCanvas from '@/components/InteractiveLivingCanvas';
 import {
   ChevronLeft,
   ChevronRight,
@@ -59,16 +60,6 @@ export default function PresentationPage() {
   // 7-Minute Jury Pitch Timer
   const [timerSeconds, setTimerSeconds] = useState(420); // 7 minutes
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-
-  // 21st Interactive Living Canvas: Mouse Cursor Spotlight Position
-  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   const isAr = language === 'ar';
   const totalSlides = 12;
@@ -1212,40 +1203,15 @@ export default function PresentationPage() {
 
   const current = slides[currentSlide];
 
-  // 21st Living Canvas: Floating Micro-Particles across the viewport
-  const livingParticles = [
-    { id: 1, x: 6, y: 18, size: 5, dur: 6.5, delay: 0, color: 'bg-cyan-400 shadow-[0_0_12px_#22d3ee]' },
-    { id: 2, x: 18, y: 72, size: 7, dur: 9.5, delay: 1.2, color: 'bg-teal-400 shadow-[0_0_14px_#2dd4bf]' },
-    { id: 3, x: 32, y: 28, size: 4, dur: 7.2, delay: 0.6, color: 'bg-emerald-400 shadow-[0_0_10px_#34d399]' },
-    { id: 4, x: 48, y: 82, size: 6, dur: 11, delay: 2.1, color: 'bg-cyan-300 shadow-[0_0_12px_#67e8f9]' },
-    { id: 5, x: 64, y: 22, size: 5, dur: 8.5, delay: 0.9, color: 'bg-teal-300 shadow-[0_0_12px_#5eead4]' },
-    { id: 6, x: 82, y: 68, size: 7, dur: 10.2, delay: 2.8, color: 'bg-amber-400 shadow-[0_0_14px_#fbbf24]' },
-    { id: 7, x: 92, y: 32, size: 4, dur: 7.8, delay: 0.4, color: 'bg-cyan-400 shadow-[0_0_10px_#22d3ee]' },
-    { id: 8, x: 12, y: 48, size: 6, dur: 12, delay: 2.5, color: 'bg-emerald-400 shadow-[0_0_12px_#34d399]' },
-    { id: 9, x: 42, y: 58, size: 5, dur: 9, delay: 1.7, color: 'bg-teal-400 shadow-[0_0_12px_#2dd4bf]' },
-    { id: 10, x: 58, y: 38, size: 6, dur: 10, delay: 0.2, color: 'bg-cyan-400 shadow-[0_0_14px_#22d3ee]' },
-    { id: 11, x: 74, y: 78, size: 4, dur: 8, delay: 1.9, color: 'bg-indigo-400 shadow-[0_0_10px_#818cf8]' },
-    { id: 12, x: 26, y: 12, size: 5, dur: 10.5, delay: 1.1, color: 'bg-teal-300 shadow-[0_0_12px_#5eead4]' },
-    { id: 13, x: 88, y: 88, size: 5, dur: 8.8, delay: 3.2, color: 'bg-emerald-300 shadow-[0_0_12px_#6ee7b7]' },
-    { id: 14, x: 4, y: 86, size: 6, dur: 11.5, delay: 0.7, color: 'bg-cyan-400 shadow-[0_0_12px_#22d3ee]' },
-    { id: 15, x: 70, y: 52, size: 4, dur: 8.4, delay: 2.4, color: 'bg-amber-300 shadow-[0_0_10px_#fcd34d]' },
-    { id: 16, x: 96, y: 16, size: 5, dur: 9.8, delay: 1.4, color: 'bg-teal-400 shadow-[0_0_12px_#2dd4bf]' },
-  ];
-
   return (
     <div
       dir={isAr ? 'rtl' : 'ltr'}
-      className="min-h-screen bg-[#060a12] text-slate-100 flex flex-col font-sans select-none overflow-hidden relative"
+      className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900/60 via-[#060a12] to-[#03060a] text-slate-100 flex flex-col font-sans select-none overflow-hidden relative"
     >
-      {/* 21st Interactive Mouse Spotlight Glow (Follows cursor smoothly) */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(650px circle at ${mousePos.x}px ${mousePos.y}px, rgba(20, 184, 166, 0.22), transparent 75%)`,
-        }}
-      />
+      {/* 21st Interactive Living Canvas: 60FPS Native Constellation Particle Network with Cursor Spotlight & Click Shockwaves */}
+      <InteractiveLivingCanvas />
 
-      {/* Vibrant Animated Aurora Mesh Waves */}
+      {/* Deep Cyber Aurora Meshes */}
       <motion.div
         animate={{
           x: [0, 40, -20, 0],
@@ -1253,7 +1219,7 @@ export default function PresentationPage() {
           scale: [1, 1.15, 0.95, 1],
         }}
         transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute -top-24 left-1/6 w-[700px] h-[700px] bg-gradient-to-br from-teal-500/25 via-emerald-500/20 to-transparent rounded-full blur-[110px] pointer-events-none"
+        className="absolute -top-24 left-1/6 w-[700px] h-[700px] bg-gradient-to-br from-teal-500/20 via-emerald-500/15 to-transparent rounded-full blur-[110px] pointer-events-none z-0"
       />
       <motion.div
         animate={{
@@ -1262,45 +1228,22 @@ export default function PresentationPage() {
           scale: [1, 1.18, 0.92, 1],
         }}
         transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute -bottom-24 right-1/6 w-[700px] h-[700px] bg-gradient-to-tl from-indigo-500/25 via-cyan-500/20 to-transparent rounded-full blur-[120px] pointer-events-none"
+        className="absolute -bottom-24 right-1/6 w-[700px] h-[700px] bg-gradient-to-tl from-indigo-500/20 via-cyan-500/15 to-transparent rounded-full blur-[120px] pointer-events-none z-0"
       />
       <motion.div
         animate={{
           scale: [0.92, 1.12, 0.92],
-          opacity: [0.12, 0.22, 0.12],
+          opacity: [0.10, 0.20, 0.10],
         }}
         transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-cyan-500/20 rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-cyan-500/15 rounded-full blur-[140px] pointer-events-none z-0"
       />
 
       {/* Top Center Spotlight Beam from Stage Header */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-64 bg-gradient-to-b from-teal-400/20 via-cyan-400/10 to-transparent blur-3xl pointer-events-none" />
-
-      {/* 21st Living Floating Glowing Particles */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        {livingParticles.map((p) => (
-          <motion.div
-            key={p.id}
-            style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.size, height: p.size }}
-            animate={{
-              y: [0, -50, 0],
-              x: [0, p.id % 2 === 0 ? 20 : -20, 0],
-              opacity: [0.25, 0.9, 0.25],
-              scale: [1, 1.35, 1],
-            }}
-            transition={{
-              duration: p.dur,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: p.delay,
-            }}
-            className={`absolute rounded-full ${p.color}`}
-          />
-        ))}
-      </div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-64 bg-gradient-to-b from-teal-400/20 via-cyan-400/10 to-transparent blur-3xl pointer-events-none z-0" />
 
       {/* Crisp High-Tech Grid Pattern Overlay with Center Glow Mask */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0ea5e912_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e912_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_75%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0ea5e910_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e910_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_75%,transparent_100%)] pointer-events-none z-0" />
 
       {/* TOP PRESENTATION BAR */}
       <header className="h-16 border-b border-slate-800/80 bg-slate-900/85 backdrop-blur-xl px-4 sm:px-6 flex items-center justify-between z-30 shrink-0">

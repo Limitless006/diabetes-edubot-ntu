@@ -17,8 +17,9 @@ import {
   ShieldCheck,
   FileCheck,
   ListOrdered,
-  Maximize2,
   Droplet,
+  BookOpen,
+  ArrowUpRight,
 } from 'lucide-react';
 
 export default function Home() {
@@ -26,23 +27,26 @@ export default function Home() {
   const [messages, setMessages] = useState<MessageProps[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [showReferencePanel, setShowReferencePanel] = useState(true);
+  const [showReferencePanel, setShowReferencePanel] = useState(false);
   const [showTransparencyModal, setShowTransparencyModal] = useState(false);
   const [showBenchmarkDrawer, setShowBenchmarkDrawer] = useState(false);
   const [showClearModal, setShowClearModal] = useState(false);
   const [showGlucometerModal, setShowGlucometerModal] = useState(false);
-  const [isPresentationMode, setIsPresentationMode] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const isAr = language === 'ar';
 
-  // Read saved theme from localStorage
+  // Read saved theme from localStorage (default to dark for cyber medical look)
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('diabetes_theme');
-      if (savedTheme === 'dark') setIsDarkMode(true);
+      if (savedTheme === 'light') {
+        setIsDarkMode(false);
+      } else {
+        setIsDarkMode(true);
+      }
     }
   }, []);
 
@@ -152,8 +156,29 @@ export default function Home() {
     .reverse()
     .find((m) => m.role === 'assistant')?.id;
 
+  // Starter Suggestion Pills (Rendered only on empty state)
+  const starterSuggestions = isAr
+    ? [
+        { label: '🥗 طريقة طبق السكري المتوازن', query: 'ما هي طريقة طبق السكري المتوازن في التغذية؟' },
+        { label: '📊 فحص السكر التراكمي (HbA1c)', query: 'ما هو فحص السكر التراكمي (HbA1c) وما دلالات أرقامه؟' },
+        { label: '🍯 خرافة التمر والعسل الطبيعي', query: 'هل التمر والعسل مسموح لمريض السكري وكم حبة؟' },
+        { label: '🌅 الخمول بعد الأكل وظاهرة الفجر', query: 'ليش احس بخمول ونعاس ورا الغدا وما هي ظاهرة الفجر؟' },
+        { label: '⚡ قاعدة 15-15 لعلاج هبوط السكر', query: 'كيف أتصرف عند هبوط السكر المفاجئ وما هي قاعدة 15-15؟' },
+      ]
+    : [
+        { label: '🥗 Diabetes Plate Method', query: 'What is the Diabetes Plate Method for meal planning?' },
+        { label: '📊 HbA1c Testing & Targets', query: 'What is the HbA1c test and its target ranges?' },
+        { label: '🍯 Natural Honey & Dates Myth', query: 'Can a person with diabetes eat dates and natural honey?' },
+        { label: '🌅 Post-Meal Fatigue & Dawn Spike', query: 'Why do I feel tired after lunch and what is the dawn phenomenon?' },
+        { label: '⚡ Rule of 15 for Hypoglycemia', query: 'How to manage sudden low blood sugar and what is the 15-15 rule?' },
+      ];
+
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors">
+    <div className="flex flex-col min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-500/5 via-slate-50 to-slate-100 dark:from-teal-950/20 dark:via-slate-950 dark:to-[#03060a] text-slate-900 dark:text-slate-100 font-sans transition-colors relative overflow-x-hidden">
+      {/* Subtle Aurora Ambient Lights */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-teal-500/10 dark:bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
+
       {/* 1. HEADER */}
       <Header
         language={language}
@@ -166,49 +191,20 @@ export default function Home() {
         onToggleReferencePanel={() => setShowReferencePanel((prev) => !prev)}
         onOpenClearModal={() => setShowClearModal(true)}
         showReferencePanel={showReferencePanel}
-        isPresentationMode={isPresentationMode}
-        onTogglePresentationMode={() => setIsPresentationMode((prev) => !prev)}
         isDarkMode={isDarkMode}
         onToggleDarkMode={() => setIsDarkMode((prev) => !prev)}
       />
 
-      {/* 2. MAIN BODY LAYOUT */}
-      <main
-        className={`flex-1 w-full mx-auto p-3 sm:p-5 flex flex-col lg:flex-row gap-5 transition-all ${
-          isPresentationMode ? 'max-w-4xl' : 'max-w-7xl'
-        }`}
-      >
-        {/* Chat Area */}
-        <section className="flex-1 flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-xs overflow-hidden min-h-[620px] max-h-[calc(100vh-130px)] transition-all">
-          {/* Quick Header Bar inside Chat in Presentation Mode */}
-          {isPresentationMode && (
-            <div className="px-5 py-2.5 bg-teal-50 dark:bg-teal-950/60 border-b border-teal-100 dark:border-teal-900/60 flex items-center justify-between text-xs">
-              <span className="font-bold text-teal-800 dark:text-teal-200 flex items-center gap-1.5">
-                <Maximize2 className="w-3.5 h-3.5 text-teal-600" />
-                <span>
-                  {isAr
-                    ? 'وضع العرض التقديمي (7-Min Presentation Focus)'
-                    : 'Live Presentation Mode'}
-                </span>
-              </span>
-              <button
-                onClick={() => setShowBenchmarkDrawer(true)}
-                className="text-teal-700 dark:text-teal-300 font-bold hover:underline flex items-center gap-1 cursor-pointer"
-              >
-                <ListOrdered className="w-3.5 h-3.5" />
-                <span>{isAr ? 'فتح الأسئلة الـ 15' : 'Open 15 Questions'}</span>
-              </button>
-            </div>
-          )}
-
-          {/* Chat Messages Container */}
-          <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-3 flex flex-col">
-            {/* Clean Hero Welcome Screen when chat is empty */}
+      {/* 2. MAIN EXPANSIVE CHAT STAGE (Full Width, Centered, Luxurious) */}
+      <main className="flex-1 w-full max-w-5xl mx-auto p-3 sm:p-5 flex flex-col justify-between transition-all z-10">
+        <section className="flex-1 flex flex-col bg-white/80 dark:bg-slate-900/75 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 rounded-3xl shadow-xl overflow-hidden min-h-[640px] max-h-[calc(100vh-125px)] transition-all">
+          {/* Chat Messages / Welcome Container */}
+          <div className="flex-1 overflow-y-auto p-4 sm:p-8 space-y-4 flex flex-col">
             {messages.length === 0 ? (
               <WelcomeHero
                 language={language}
-                onSelectPrompt={(p) => handleSendMessage(p)}
                 onOpenBenchmark={() => setShowBenchmarkDrawer(true)}
+                onOpenGlucometer={() => setShowGlucometerModal(true)}
               />
             ) : (
               <AnimatePresence initial={false}>
@@ -231,15 +227,15 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-center gap-2.5 my-3"
               >
-                <div className="w-7 h-7 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-2xs">
-                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-teal-600 to-emerald-500 text-white flex items-center justify-center shadow-md shadow-teal-500/20">
+                  <Loader2 className="w-4 h-4 animate-spin" />
                 </div>
-                <div className="p-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/60 rounded-2xl rounded-bl-xs text-xs text-slate-600 dark:text-slate-300 flex items-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 animate-pulse" />
-                  <span>
+                <div className="p-3.5 bg-slate-50 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 rounded-2xl rounded-bl-xs text-xs text-slate-700 dark:text-slate-200 flex items-center gap-2 shadow-xs">
+                  <Sparkles className="w-4 h-4 text-teal-500 animate-pulse" />
+                  <span className="font-medium">
                     {isAr
-                      ? 'جاري استرجاع المعرفة السريرية الموثقة...'
-                      : 'Retrieving verified clinical knowledge...'}
+                      ? 'جاري استرجاع المعرفة السريرية الموثقة من 25 مصدراً دولياً...'
+                      : 'Retrieving verified clinical evidence from 25 global sources...'}
                   </span>
                 </div>
               </motion.div>
@@ -248,9 +244,31 @@ export default function Home() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Chat Input Bar */}
-          <div className="p-3 sm:p-4 bg-slate-50/90 dark:bg-slate-900/90 border-t border-slate-100 dark:border-slate-800 transition-colors">
-            <div className="relative flex items-center bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xs focus-within:border-teal-500 focus-within:ring-2 focus-within:ring-teal-500/15 transition-all p-1.5 sm:p-2">
+          {/* Quick Suggestion Pills (Shown gracefully above input dock on empty chat) */}
+          {messages.length === 0 && (
+            <div className="px-4 py-2 border-t border-slate-100 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md">
+              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 text-xs">
+                <span className="text-[11px] text-teal-600 dark:text-teal-400 font-extrabold shrink-0 flex items-center gap-1">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>{isAr ? 'أسئلة سريعة مقترحة:' : 'Quick Prompts:'}</span>
+                </span>
+                {starterSuggestions.map((item, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleSendMessage(item.query)}
+                    className="shrink-0 px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 hover:bg-teal-50 dark:hover:bg-teal-950/60 text-slate-700 dark:text-slate-300 hover:text-teal-700 dark:hover:text-teal-300 border border-slate-200/80 dark:border-slate-700/70 hover:border-teal-400 transition-all font-medium text-xs cursor-pointer shadow-2xs flex items-center gap-1 group"
+                  >
+                    <span>{item.label}</span>
+                    <ArrowUpRight className="w-3 h-3 text-slate-400 group-hover:text-teal-500 transition-colors" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Chat Floating Input Dock */}
+          <div className="p-3 sm:p-5 bg-slate-50/80 dark:bg-slate-900/90 border-t border-slate-100 dark:border-slate-800 transition-colors">
+            <div className="relative flex items-center bg-white dark:bg-slate-850 border border-slate-200/90 dark:border-slate-700/80 rounded-2xl shadow-md focus-within:border-teal-500 focus-within:ring-2 focus-within:ring-teal-500/20 transition-all p-1.5 sm:p-2.5">
               <textarea
                 ref={textareaRef}
                 value={input}
@@ -258,12 +276,12 @@ export default function Home() {
                 onKeyDown={handleKeyDown}
                 placeholder={
                   isAr
-                    ? 'اكتب سؤالك هنا عن سكر الدم، التغذية والوجبات، أو الأعراض...'
-                    : 'Ask any question about Type 2 Diabetes here...'
+                    ? 'اكتب سؤالك هنا عن سكر الدم، الوجبات، الأعراض، أو اسأل باللهجة العراقية...'
+                    : 'Ask anything about Type 2 Diabetes, symptoms, nutrition, or glucose...'
                 }
                 rows={1}
                 disabled={isLoading}
-                className="flex-1 bg-transparent resize-none border-0 focus:ring-0 text-xs sm:text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 p-2 max-h-32 min-h-[38px] outline-none"
+                className="flex-1 bg-transparent resize-none border-0 focus:ring-0 text-xs sm:text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 p-2 max-h-32 min-h-[42px] outline-none leading-relaxed"
               />
 
               <motion.button
@@ -271,7 +289,7 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleSendMessage()}
                 disabled={isLoading || !input.trim()}
-                className="w-9 h-9 rounded-xl bg-teal-600 hover:bg-teal-700 disabled:bg-slate-200 dark:disabled:bg-slate-700 text-white flex items-center justify-center shrink-0 transition-colors shadow-2xs cursor-pointer"
+                className="w-10 h-10 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 disabled:opacity-40 text-white flex items-center justify-center shrink-0 transition-all shadow-md shadow-teal-500/25 cursor-pointer"
                 title={isAr ? 'إرسال' : 'Send'}
               >
                 {isLoading ? (
@@ -282,50 +300,54 @@ export default function Home() {
               </motion.button>
             </div>
 
-            {/* Input Bar Helper Footer */}
-            <div className="flex items-center justify-between mt-2 px-1 text-[11px] text-slate-400 dark:text-slate-500">
+            {/* Input Dock Helper Footer (Clean & Prominent Direct Access) */}
+            <div className="flex flex-wrap items-center justify-between gap-2 mt-2.5 px-1 text-[11px] text-slate-500 dark:text-slate-400 font-medium">
               <div className="flex items-center gap-1.5 truncate">
                 <ShieldCheck className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
                 <span className="truncate">
                   {isAr
-                    ? 'إجابات موثقة رسمياً خالية من الهلوسة'
-                    : 'Officially verified clinical AI'}
+                    ? 'إجابات سريرية رصينة مقيدة بـ 25 مصدراً دولياً'
+                    : 'Evidence-grounded clinical AI bounded by 25 sources'}
                 </span>
               </div>
-              <div className="flex items-center gap-2.5 shrink-0 ms-2">
+
+              {/* Direct Quick Shortcuts */}
+              <div className="flex items-center gap-3 shrink-0">
                 <button
                   onClick={() => setShowGlucometerModal(true)}
-                  className="hover:text-rose-600 dark:hover:text-rose-400 font-semibold flex items-center gap-1 text-rose-600 dark:text-rose-400 cursor-pointer"
+                  className="hover:text-rose-600 dark:hover:text-rose-400 font-bold flex items-center gap-1 text-rose-600 dark:text-rose-400 cursor-pointer transition-colors"
                 >
-                  <Droplet className="w-3 h-3 fill-rose-500" />
-                  <span>{isAr ? 'جهاز السكر' : 'Glucometer'}</span>
+                  <Droplet className="w-3.5 h-3.5 fill-rose-500" />
+                  <span>{isAr ? 'محاكي جهاز السكر' : 'Glucometer'}</span>
                 </button>
+
                 <button
                   onClick={() => setShowBenchmarkDrawer(true)}
-                  className="hover:text-teal-700 dark:hover:text-teal-300 font-semibold flex items-center gap-1 text-teal-600 dark:text-teal-400 cursor-pointer"
+                  className="hover:text-teal-700 dark:hover:text-teal-300 font-bold flex items-center gap-1 text-teal-600 dark:text-teal-400 cursor-pointer transition-colors"
                 >
-                  <ListOrdered className="w-3 h-3" />
-                  <span>{isAr ? 'الأسئلة الـ 15' : '15 Qs'}</span>
+                  <ListOrdered className="w-3.5 h-3.5" />
+                  <span>{isAr ? 'الأسئلة الـ 15 المعتمدة' : '15 Qs'}</span>
                 </button>
+
+                <button
+                  onClick={() => setShowReferencePanel(true)}
+                  className="hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1 text-slate-500 dark:text-slate-400 cursor-pointer transition-colors"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-slate-400" />
+                  <span>{isAr ? 'دليل القراءات' : 'Reference'}</span>
+                </button>
+
                 <button
                   onClick={() => setShowTransparencyModal(true)}
-                  className="hover:text-teal-700 dark:hover:text-teal-300 underline flex items-center gap-1 cursor-pointer"
+                  className="hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1 text-slate-500 dark:text-slate-400 cursor-pointer transition-colors"
                 >
-                  <FileCheck className="w-3 h-3 text-slate-400" />
+                  <FileCheck className="w-3.5 h-3.5 text-slate-400" />
                   <span>{isAr ? 'تصدير' : 'Export'}</span>
                 </button>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Educational Reference Panel (Collapsible Sidebar - Hidden in Presentation Mode) */}
-        {!isPresentationMode && showReferencePanel && (
-          <ReferencePanel
-            language={language}
-            onClose={() => setShowReferencePanel(false)}
-          />
-        )}
       </main>
 
       {/* 3. BENCHMARK 15 QUESTIONS DRAWER */}
@@ -363,6 +385,13 @@ export default function Home() {
         onClose={() => setShowTransparencyModal(false)}
         language={language}
         messages={messages}
+      />
+
+      {/* 7. REFERENCE PANEL SLIDE-OVER DRAWER */}
+      <ReferencePanel
+        isOpen={showReferencePanel}
+        onClose={() => setShowReferencePanel(false)}
+        language={language}
       />
     </div>
   );

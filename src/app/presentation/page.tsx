@@ -620,93 +620,113 @@ export default function PresentationPage() {
     },
 
     // ==========================================
-    // SLIDE 6: LIFESTYLE MEDICINE & THE ABCS
+    // SLIDE 6: THE GOLDEN WINDOW & DIABETES REMISSION
     // ==========================================
     {
       id: 6,
-      badge: isAr ? 'طب نمط الحياة والرعاية الذاتية' : 'Lifestyle Medicine & ABCs',
+      badge: isAr ? 'النافذة الذهبية والهدأة السريرية' : 'The Golden Window & Remission',
       title: isAr
-        ? 'طب نمط الحياة وقاعدة الـ ABCs: ركائز السيطرة المثبتة علمياً'
-        : 'Lifestyle Medicine & The ABCs: Core Pillars of Glycemic Control',
+        ? 'النافذة الذهبية والهدأة السريرية: هل يمكن عكس السكري من النوع الثاني؟'
+        : 'The Golden Window & Remission: Can Type 2 Diabetes Be Reversed?',
       subtitle: isAr
-        ? 'طريقة طبق الغذاء الصحي (Plate Method)، النشاط البدني، والمحاور الأربعة لحماية القلب والشرايين'
-        : 'The Diabetes Plate Method, physical activity prescription, and the 4 ABCs cardiovascular framework',
+        ? 'أحدث ما توصلت إليه أبحاث ADA ودراسة DiRECT: استعادة كفاءة خلايا بيتا وعكس ما قبل السكري بنمط الحياة'
+        : 'Groundbreaking ADA consensus & DiRECT trial evidence: beta-cell rest and reversing prediabetes without drugs',
       speakerNotes: isAr
-        ? 'نركز مع الدكتور على طب نمط الحياة: كيف يوجه البوت المريض لتقسيم الصحن (50% خضار، 25% بروتين، 25% نشويات)، وممارسة 150 دقيقة مشي أسبوعياً، مع شرح قاعدة ABCs الأربعة.'
-        : 'Highlight Lifestyle Medicine: Diabetes Plate Method (50% non-starchy veg, 25% lean protein, 25% complex carbs), 150 min weekly exercise, and the ABCs self-care goals.',
+        ? 'نشرح للدكتور أن السكري من النوع الثاني لم يعد حكماً أبدياً؛ فوفق دراسة DiRECT وتوافق ADA الحديث، فإن فقدان الوزن الصحي في أول 3-5 سنوات يمنح المريض فرصة الهدأة السريرية الكاملة والتحكم بالسكر بدون أي أدوية.'
+        : 'Highlight that modern clinical guidelines (ADA 2024 & DiRECT trial) recognize Diabetes Remission (HbA1c <6.5% for >3 months without medication) through early lifestyle intervention and 10-15% weight loss.',
       render: () => (
         <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-            {/* Left: Plate Method & Physical Activity */}
-            <div className="p-4 rounded-3xl bg-slate-900/90 border border-teal-500/30 shadow-xl">
-              <h4 className="text-xs uppercase tracking-wider text-teal-400 font-extrabold mb-3 flex items-center gap-2">
-                <Activity className="w-4 h-4" />
-                {isAr ? 'طريقة طبق السكري المعتمدة (ADA):' : 'The Diabetes Plate Method (ADA):'}
-              </h4>
-              <div className="space-y-2 text-xs">
-                <div className="p-2.5 rounded-2xl bg-emerald-950/40 border border-emerald-800/80 flex items-center justify-between">
-                  <div>
-                    <span className="font-bold text-emerald-300">{isAr ? 'نصف الصحن (50%)' : 'Half Plate (50%)'}</span>
-                    <p className="text-[11px] text-slate-300">{isAr ? 'خضروات غير نشوية غنية بالألياف' : 'Non-starchy high-fiber vegetables'}</p>
-                  </div>
-                  <span className="font-mono font-extrabold text-emerald-300 text-sm">50%</span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            {/* Pillar 1: Prediabetes Reversal */}
+            <div className="p-5 rounded-3xl bg-slate-900/90 border border-emerald-500/40 shadow-xl backdrop-blur-md flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3 border border-emerald-500/30">
+                  <RotateCcw className="w-5 h-5" />
                 </div>
-
-                <div className="p-2.5 rounded-2xl bg-cyan-950/40 border border-cyan-800/80 flex items-center justify-between">
-                  <div>
-                    <span className="font-bold text-cyan-300">{isAr ? 'ربع الصحن (25%)' : 'Quarter Plate (25%)'}</span>
-                    <p className="text-[11px] text-slate-300">{isAr ? 'بروتين صافٍ (سمك، دجاج، بيض، بقوليات)' : 'Lean protein (poultry, fish, legumes)'}</p>
-                  </div>
-                  <span className="font-mono font-extrabold text-cyan-300 text-sm">25%</span>
-                </div>
-
-                <div className="p-2.5 rounded-2xl bg-amber-950/40 border border-amber-800/80 flex items-center justify-between">
-                  <div>
-                    <span className="font-bold text-amber-300">{isAr ? 'ربع الصحن (25%)' : 'Quarter Plate (25%)'}</span>
-                    <p className="text-[11px] text-slate-300">{isAr ? 'كربوهيدرات معقدة ذات مؤشر جلايسيمي منخفض' : 'Low-GI complex carbohydrates'}</p>
-                  </div>
-                  <span className="font-mono font-extrabold text-amber-300 text-sm">25%</span>
-                </div>
+                <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider block mb-1">
+                  100% Reversible
+                </span>
+                <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-1.5">
+                  {isAr ? '1. عكس ما قبل السكري' : '1. Reversing Prediabetes'}
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed font-light">
+                  {isAr
+                    ? 'مرحلة ما قبل السكري (التراكمي 5.7% – 6.4%) قابلة للتراجع الكامل وتفادي التحول للسكري بنسبة 58% – 71% بنمط الحياة وتخفيف الوزن بنسبة 7%.'
+                    : 'Prediabetes (A1C 5.7%-6.4%) is fully reversible. The DPP trial showed 58%-71% reduction in diabetes incidence through moderate lifestyle changes.'}
+                </p>
               </div>
+              <span className="text-[10px] text-emerald-300 font-mono bg-emerald-950/60 px-2 py-0.5 rounded-lg border border-emerald-800 mt-3 inline-block">
+                {isAr ? 'فرصة وقاية ذهبية' : 'Golden Opportunity'}
+              </span>
             </div>
 
-            {/* Right: The ABCs of Diabetes */}
-            <div className="p-4 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-xl">
-              <h4 className="text-xs uppercase tracking-wider text-teal-400 font-extrabold mb-3 flex items-center gap-2">
-                <Heart className="w-4 h-4 text-rose-400" />
-                {isAr ? 'قاعدة الـ ABCs لحماية القلب والأوعية:' : 'The ABCs of Diabetes Self-Care:'}
-              </h4>
-              <div className="grid grid-cols-2 gap-2 text-xs">
-                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
-                  <span className="font-bold text-teal-300 block">A: A1C</span>
-                  <span className="text-[11px] text-slate-300">{isAr ? 'الهدف غالباً أقل من 7%' : 'Target: < 7.0%'}</span>
+            {/* Pillar 2: Diabetes Remission Concept */}
+            <div className="p-5 rounded-3xl bg-slate-900/90 border border-teal-500/40 shadow-xl backdrop-blur-md flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3 border border-teal-500/30">
+                  <Sparkles className="w-5 h-5" />
                 </div>
-                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
-                  <span className="font-bold text-cyan-300 block">B: Blood Pressure</span>
-                  <span className="text-[11px] text-slate-300">{isAr ? 'الهدف أقل من 130/80' : 'Target: < 130/80'}</span>
-                </div>
-                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
-                  <span className="font-bold text-amber-300 block">C: Cholesterol</span>
-                  <span className="text-[11px] text-slate-300">{isAr ? 'ضبط الدهون وضبط الـ LDL' : 'LDL Management'}</span>
-                </div>
-                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
-                  <span className="font-bold text-rose-300 block">S: Stop Smoking</span>
-                  <span className="text-[11px] text-slate-300">{isAr ? 'امتناع تام عن التبغ' : 'Zero Tobacco'}</span>
-                </div>
+                <span className="text-[10px] font-mono text-teal-400 font-bold uppercase tracking-wider block mb-1">
+                  Clinical Remission
+                </span>
+                <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-1.5">
+                  {isAr ? '2. مفهوم الهدأة السريرية' : '2. Diabetes Remission'}
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed font-light">
+                  {isAr
+                    ? 'تعريف ADA الحديث: بقاء السكر التراكمي أقل من 6.5% لمدة 3 أشهر على الأقل دون أي دواء مخفض للسكر. لا نسميه "شفاءً دائماً" بل "هدأة" تتطلب الاستمرار في العادات الصحية.'
+                    : 'ADA definition: Maintaining HbA1c <6.5% for at least 3 months without glucose-lowering medications. Termed "remission" as healthy habits must continue.'}
+                </p>
               </div>
+              <span className="text-[10px] text-teal-300 font-mono bg-teal-950/60 px-2 py-0.5 rounded-lg border border-teal-800 mt-3 inline-block">
+                {isAr ? 'HbA1c < 6.5% بدون علاج' : 'HbA1c < 6.5% Drug-Free'}
+              </span>
+            </div>
 
-              {/* Preventative Routine Checks */}
-              <div className="mt-3 pt-2.5 border-t border-slate-800 text-[11px] text-slate-300 space-y-1">
-                <p>• {isAr ? 'فحص يومي للقدمين لمنع القرح والغرغرينا.' : 'Daily foot inspection to prevent ulcers.'}</p>
-                <p>• {isAr ? 'فحص سنوي لقاع العين لرصد اعتلال الشبكية.' : 'Annual dilated retinal eye examination.'}</p>
-                <p>• {isAr ? 'فحص سنوي لوظائف الكلى والزلال البولي (UACR).' : 'Annual kidney microalbumin check (UACR).'}</p>
+            {/* Pillar 3: The Golden Window Mechanism */}
+            <div className="p-5 rounded-3xl bg-slate-900/90 border border-cyan-500/40 shadow-xl backdrop-blur-md flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-3 border border-cyan-500/30">
+                  <HeartPulse className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase tracking-wider block mb-1">
+                  DiRECT Trial Evidence
+                </span>
+                <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-1.5">
+                  {isAr ? '3. استعادة خلايا بيتا' : '3. Beta-Cell Reactivation'}
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed font-light">
+                  {isAr
+                    ? 'في السنوات الأولى من التشخيص، تكون خلايا بيتا خاملة ومجهدة وليست تالفة نهائياً. إنقاص 10% إلى 15% من وزن الجسم يزيل الدهون من الكبد والبنكرياس فتعود الخلايا لإفراز الإنسولين.'
+                    : 'Early in diagnosis, beta-cells are stressed rather than permanently lost. Losing 10-15% body weight removes ectopic fat, awakening natural insulin secretion.'}
+                </p>
               </div>
+              <span className="text-[10px] text-cyan-300 font-mono bg-cyan-950/60 px-2 py-0.5 rounded-lg border border-cyan-800 mt-3 inline-block">
+                {isAr ? 'السنوات 1 إلى 5 الذهبية' : 'Early 1-5 Years Window'}
+              </span>
             </div>
           </div>
 
-          <div className="p-3 rounded-2xl bg-slate-900/80 border border-teal-500/30 text-xs text-slate-300 flex items-center justify-between">
-            <span>{isAr ? 'المشي السريع لمدة 150 دقيقة أسبوعياً يحسن حساسية الإنسولين ويخفض التراكمي بمقدار 0.5% - 0.7%.' : '150 min/week moderate aerobic activity lowers HbA1c by 0.5-0.7% naturally.'}</span>
-            <span className="text-teal-400 font-mono text-[11px] font-bold">CDC Guidelines</span>
+          {/* Bottom Callout Banner */}
+          <div className="p-4 rounded-3xl bg-slate-900/90 border border-teal-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+            <div className="flex items-center gap-3 text-start">
+              <div className="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30">
+                <Compass className="w-5 h-5" />
+              </div>
+              <div>
+                <h5 className="font-extrabold text-xs sm:text-sm text-slate-100">
+                  {isAr ? 'رسالة البوت التثقيفية: غرس الأمل العملي المبني على الدليل العلمي' : 'EduBot Mission: Evidence-Based Hope & Timely Action'}
+                </h5>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  {isAr
+                    ? 'يبث المساعد الطبي في نفس المريض الأمل الواقعي؛ فبدلاً من اليأس واعتبار المرض قيداً أبدياً، يرشده لاغتنام هذه النافذة الذهبية تحت إشراف طبيبه.'
+                    : 'Transforms patient mindset from helpless despair to proactive empowerment, guiding them to seize the early reversible window with their physician.'}
+                </p>
+              </div>
+            </div>
+            <span className="px-3 py-1.5 rounded-xl bg-teal-950/80 text-teal-300 border border-teal-800 text-xs font-mono font-bold shrink-0">
+              DiRECT & ADA 2024
+            </span>
           </div>
         </div>
       ),

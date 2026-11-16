@@ -152,6 +152,12 @@ export default function PresentationPage() {
       color: 'border-indigo-500/40 text-indigo-300 bg-indigo-950/20',
       dotColor: 'bg-indigo-400',
     },
+    {
+      nameAr: 'حسن حامد حسن',
+      nameEn: 'Hassan Hamid Hassan',
+      color: 'border-amber-500/40 text-amber-300 bg-amber-950/20',
+      dotColor: 'bg-amber-400',
+    },
   ];
 
   // 12 SLIDES CONTENT DEFINITIONS (Bilingual EN / AR)
@@ -239,11 +245,11 @@ export default function PresentationPage() {
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 text-start">
               {teamMembers.map((member, idx) => (
                 <div
                   key={idx}
-                  className={`p-3.5 rounded-2xl border ${member.color} hover:border-teal-400/60 transition-all duration-300 shadow-sm flex items-center gap-2.5`}
+                  className={`p-3 rounded-2xl border ${member.color} hover:border-teal-400/60 transition-all duration-300 shadow-sm flex items-center gap-2`}
                 >
                   <span className={`w-2 h-2 rounded-full ${member.dotColor} shrink-0`} />
                   <div>
@@ -1137,7 +1143,7 @@ export default function PresentationPage() {
               <span className="text-[11px] text-amber-300 font-mono font-bold">2025 - 2026</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-start">
               {teamMembers.map((member, idx) => (
                 <div key={idx} className="p-2.5 rounded-xl bg-slate-800/70 border border-slate-700/60 flex items-center gap-2">
                   <span className={`w-2 h-2 rounded-full ${member.dotColor} shrink-0`} />
@@ -1147,22 +1153,6 @@ export default function PresentationPage() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Future Roadmap Pills */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 w-full max-w-2xl mb-4 text-center text-xs">
-            <div className="p-2.5 rounded-2xl bg-slate-900/90 border border-teal-500/30 flex items-center justify-center gap-2">
-              <Smartphone className="w-4 h-4 text-teal-400" />
-              <span>{isAr ? 'تطبيق موبايل (iOS / Android)' : 'Mobile App (iOS & Android)'}</span>
-            </div>
-            <div className="p-2.5 rounded-2xl bg-slate-900/90 border border-cyan-500/30 flex items-center justify-center gap-2">
-              <Activity className="w-4 h-4 text-cyan-400" />
-              <span>{isAr ? 'ربط حساسات السكر المستمرة (CGM)' : 'Continuous Glucose Sensors (CGM)'}</span>
-            </div>
-            <div className="p-2.5 rounded-2xl bg-slate-900/90 border border-emerald-500/30 flex items-center justify-center gap-2">
-              <Hospital className="w-4 h-4 text-emerald-400" />
-              <span>{isAr ? 'الربط بالسجل الصحي للعيادات (EHR)' : 'Clinic EHR Integration'}</span>
             </div>
           </div>
 

@@ -181,17 +181,25 @@ export default function PresentationPage() {
         <div className="flex flex-col items-center justify-center text-center max-w-5xl mx-auto h-full px-2 py-4">
           {/* Top Academic Ribbon with University Crest Frame */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-5">
-            {/* Prestigious University Crest Frame */}
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-amber-400/30 via-teal-500/30 to-cyan-400/30 rounded-3xl blur-md opacity-80 group-hover:opacity-100 transition duration-500 pointer-events-none" />
-              <div className="relative w-24 h-32 sm:w-28 sm:h-36 rounded-2xl bg-gradient-to-b from-slate-900/95 via-slate-900/90 to-slate-950/95 border-2 border-amber-400/50 shadow-2xl p-2 flex flex-col items-center justify-center backdrop-blur-xl">
+            {/* Prestigious University Crest Frame with 21st-century Floating Levitation */}
+            <motion.div
+              animate={{ y: [-5, 6, -5], rotate: [-0.6, 0.6, -0.6] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
+              className="relative group cursor-pointer"
+            >
+              <motion.div
+                animate={{ scale: [0.95, 1.12, 0.95], opacity: [0.5, 0.85, 0.5] }}
+                transition={{ repeat: Infinity, duration: 3.2, ease: 'easeInOut' }}
+                className="absolute -inset-3 bg-gradient-to-tr from-amber-400/40 via-teal-500/40 to-cyan-400/40 rounded-3xl blur-xl pointer-events-none"
+              />
+              <div className="relative w-24 h-32 sm:w-28 sm:h-36 rounded-2xl bg-gradient-to-b from-slate-900/95 via-slate-900/90 to-slate-950/95 border-2 border-amber-400/60 shadow-[0_0_35px_rgba(245,158,11,0.25)] p-2 flex flex-col items-center justify-center backdrop-blur-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_45px_rgba(20,184,166,0.35)]">
                 <img
                   src="/ntu-logo.png"
                   alt="Northern Technical University Crest"
-                  className="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(20,184,166,0.3)] transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(20,184,166,0.3)] transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* University & Group Details */}
             <div className="text-center sm:text-start">
@@ -1144,14 +1152,9 @@ export default function PresentationPage() {
             </div>
           </div>
 
-          <h2 className="text-xl sm:text-3xl font-black text-slate-100 mb-1">
+          <h2 className="text-xl sm:text-3xl font-black text-slate-100 mb-3">
             {isAr ? 'شكراً جزيلاً لحسن استماعكم واهتمامكم' : 'Thank You for Your Time & Attention'}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto mb-3 leading-relaxed font-light">
-            {isAr
-              ? 'يسعد فريق الطلبة الباحثين (Group 01) تلقي استفسارات وملاحظات أساتذتنا الأفاضل وأعضاء لجنة التحكيم الموقرة.'
-              : 'The Group 01 student researchers welcome all questions, feedback, and technical discussions from the esteemed evaluation committee.'}
-          </p>
 
           {/* Academic Crest & Team Reminder Card (No Roles) */}
           <div className="p-3.5 sm:p-4 rounded-3xl bg-slate-900/90 border border-teal-500/40 w-full max-w-2xl mb-3 shadow-2xl backdrop-blur-xl">
@@ -1204,13 +1207,39 @@ export default function PresentationPage() {
       dir={isAr ? 'rtl' : 'ltr'}
       className="min-h-screen bg-[#070b14] text-slate-100 flex flex-col font-sans select-none overflow-hidden relative"
     >
-      {/* Background ambient medical glows */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[160px] pointer-events-none" />
+      {/* Background ambient dynamic living glows */}
+      <motion.div
+        animate={{
+          x: [0, 25, 0],
+          y: [0, -20, 0],
+          scale: [1, 1.08, 1],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[140px] pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          x: [0, -25, 0],
+          y: [0, 20, 0],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          scale: [0.95, 1.05, 0.95],
+          opacity: [0.03, 0.07, 0.03],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none"
+      />
 
-      {/* Subtle Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b0a_1px,transparent_1px),linear-gradient(to_bottom,#1e293b0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+      {/* Top Center Spotlight Beam */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-56 bg-gradient-to-b from-teal-500/10 via-cyan-500/5 to-transparent blur-3xl pointer-events-none" />
+
+      {/* Subtle Precision Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#33415510_1px,transparent_1px),linear-gradient(to_bottom,#33415510_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
       {/* TOP PRESENTATION BAR */}
       <header className="h-16 border-b border-slate-800/80 bg-slate-900/85 backdrop-blur-xl px-4 sm:px-6 flex items-center justify-between z-30 shrink-0">

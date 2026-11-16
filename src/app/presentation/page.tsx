@@ -33,14 +33,20 @@ import {
   Activity,
   Terminal,
   FileCode2,
-  Check,
   Flame,
   Info,
-  ListOrdered,
-  Download,
   Droplet,
   Heart,
   ShieldCheck,
+  Building2,
+  Smartphone,
+  Eye,
+  Microscope,
+  Network,
+  Scale,
+  Hospital,
+  Compass,
+  Check,
 } from 'lucide-react';
 
 export default function PresentationPage() {
@@ -120,41 +126,39 @@ export default function PresentationPage() {
 
   const progressPercent = ((currentSlide + 1) / totalSlides) * 100;
 
-  // Real Team Members of Group 01 (Academic Students)
+  // Real Team Members of Group 01 (Academic Students - No Roles)
   const teamMembers = [
     {
       nameAr: 'محمد قصي عبد الكريم',
       nameEn: 'Mohammed Qusai Abdul Karim',
-      roleAr: 'طالب باحث • Group 01',
-      roleEn: 'Student Researcher • Group 01',
-      color: 'border-teal-500/40 text-teal-300',
+      color: 'border-cyan-500/40 text-cyan-300 bg-cyan-950/20',
+      dotColor: 'bg-cyan-400',
     },
     {
       nameAr: 'أنور مرعي حسن',
       nameEn: 'Anwar Marei Hassan',
-      roleAr: 'طالب باحث • Group 01',
-      roleEn: 'Student Researcher • Group 01',
-      color: 'border-cyan-500/40 text-cyan-300',
+      color: 'border-teal-500/40 text-teal-300 bg-teal-950/20',
+      dotColor: 'bg-teal-400',
     },
     {
       nameAr: 'عبد الباسط أحمد ناصر',
       nameEn: 'Abdul Basit Ahmed Nasser',
-      roleAr: 'طالب باحث • Group 01',
-      roleEn: 'Student Researcher • Group 01',
-      color: 'border-emerald-500/40 text-emerald-300',
+      color: 'border-emerald-500/40 text-emerald-300 bg-emerald-950/20',
+      dotColor: 'bg-emerald-400',
     },
     {
       nameAr: 'عبد الله دليل سالم',
       nameEn: 'Abdullah Dalil Salem',
-      roleAr: 'طالب باحث • Group 01',
-      roleEn: 'Student Researcher • Group 01',
-      color: 'border-indigo-500/40 text-indigo-300',
+      color: 'border-indigo-500/40 text-indigo-300 bg-indigo-950/20',
+      dotColor: 'bg-indigo-400',
     },
   ];
 
   // 12 SLIDES CONTENT DEFINITIONS (Bilingual EN / AR)
   const slides = [
+    // ==========================================
     // SLIDE 1: COVER & OFFICIAL IDENTITY
+    // ==========================================
     {
       id: 1,
       badge: isAr ? 'المشروع الجامعي الرسمي • Group 01' : 'Official Academic Project • Group 01',
@@ -162,18 +166,18 @@ export default function PresentationPage() {
         ? 'المساعد الطبي الذكي للتثقيف بمرض السكري من النوع الثاني'
         : 'Type 2 Diabetes Educational Assistant — Group 01',
       subtitle: isAr
-        ? 'الشات بوت الطبي التفاعلي المقيد بـ 25 مصدراً عالمياً معتمداً والمحصن ضد الهلوسة الطبية'
-        : 'Evidence-Grounded Interactive Clinical AI Prototype for Patient Education & Misinformation Defense',
+        ? 'منظومة ذكاء اصطناعي سريرية رصينة مقيدة بـ 25 مصدراً دولياً ومحصنة ضد الهلوسة الطبية'
+        : 'Evidence-Grounded Clinical AI Prototype for Patient Education & Misinformation Defense',
       speakerNotes: isAr
-        ? 'نبدأ العرض بالتعريف بالجامعة التقنية الشمالية وفريق Group 01، ثم تقديم الشات بوت الطبي التفاعلي لمرض السكري من النوع الثاني ورسالته السريرية المحصنة ضد الهلوسة.'
-        : 'Introduce Northern Technical University, team Group 01, and our verified clinical AI assistant strictly grounded in 25 authoritative sources.',
+        ? 'نبدأ العرض بالترحيب بلجنة التحكيم الموقرة، والتعريف بالجامعة التقنية الشمالية وفريق Group 01، ثم إطلاق رسالة المشروع كحل تثقيفي سريري رصين.'
+        : 'Welcome the examination committee, introduce Northern Technical University and team Group 01, establishing the clinical safety mission.',
       render: () => (
-        <div className="flex flex-col items-center justify-center text-center max-w-5xl mx-auto h-full px-2">
+        <div className="flex flex-col items-center justify-center text-center max-w-5xl mx-auto h-full px-2 py-4">
           {/* Top Academic Ribbon with University Crest Frame */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-5">
             {/* Prestigious University Crest Frame */}
             <div className="relative group">
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-amber-400/40 via-teal-500/40 to-cyan-400/40 rounded-3xl blur-md opacity-80 group-hover:opacity-100 transition duration-500 animate-pulse pointer-events-none" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-amber-400/30 via-teal-500/30 to-cyan-400/30 rounded-3xl blur-md opacity-80 group-hover:opacity-100 transition duration-500 pointer-events-none" />
               <div className="relative w-24 h-32 sm:w-28 sm:h-36 rounded-2xl bg-gradient-to-b from-slate-900/95 via-slate-900/90 to-slate-950/95 border-2 border-amber-400/50 shadow-2xl p-2 flex flex-col items-center justify-center backdrop-blur-xl">
                 <img
                   src="/ntu-logo.png"
@@ -185,26 +189,26 @@ export default function PresentationPage() {
 
             {/* University & Group Details */}
             <div className="text-center sm:text-start">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 tracking-wide mb-1.5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 tracking-wide mb-2">
                 <Award className="w-3.5 h-3.5 text-amber-400" />
-                <span>{isAr ? 'الجامعة التقنية الشمالية (Northern Technical University) • Group 01' : 'Northern Technical University • Group 01'}</span>
+                <span>{isAr ? 'الجامعة التقنية الشمالية • Northern Technical University' : 'Northern Technical University • Group 01'}</span>
               </div>
-              <h3 className="text-sm sm:text-base font-bold text-slate-200">
+              <h3 className="text-base sm:text-lg font-bold text-slate-100">
                 {isAr ? 'مشروع مسابقة الذكاء الاصطناعي الأكاديمية' : 'Academic AI Project Competition'}
               </h3>
-              <p className="text-xs text-slate-400 flex items-center justify-center sm:justify-start gap-2 mt-0.5">
+              <p className="text-xs text-slate-400 flex items-center justify-center sm:justify-start gap-2 mt-1">
                 <span className="text-teal-400 font-semibold font-mono">Group 01</span>
                 <span>•</span>
-                <span>{isAr ? 'العام الدراسي 2025 - 2026' : 'Academic Year 2025 - 2026'}</span>
+                <span>{isAr ? 'العام الأكاديمي 2025 - 2026' : 'Academic Year 2025 - 2026'}</span>
               </p>
             </div>
           </div>
 
           {/* Bot Name & Official Identity Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-teal-500/50 shadow-lg shadow-teal-500/10 mb-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-teal-500/40 shadow-lg shadow-teal-500/10 mb-3">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="font-mono text-xs sm:text-sm font-extrabold bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent">
-              {isAr ? 'الشات بوت الطبي التفاعلي لمرض السكري من النوع الثاني' : 'Type 2 Diabetes Educational Assistant'}
+              {isAr ? 'المساعد الطبي الذكي للتثقيف بمرض السكري من النوع الثاني' : 'Type 2 Diabetes Educational Assistant'}
             </span>
             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-teal-950/80 text-teal-300 border border-teal-800">
               Group 01
@@ -212,21 +216,21 @@ export default function PresentationPage() {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-teal-200 via-emerald-300 to-cyan-200 bg-clip-text text-transparent mb-3 leading-tight max-w-4xl">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-200 via-emerald-200 to-cyan-200 bg-clip-text text-transparent mb-3 leading-tight max-w-4xl">
             {isAr
               ? 'المساعد الطبي الذكي للتثقيف بمرض السكري من النوع الثاني (Group 01)'
               : 'Type 2 Diabetes Educational Assistant — Group 01'}
           </h1>
-          <p className="text-xs sm:text-base text-slate-300 max-w-3xl mx-auto mb-5 font-light leading-relaxed">
+          <p className="text-xs sm:text-base text-slate-300 max-w-3xl mx-auto mb-6 font-light leading-relaxed">
             {isAr
-              ? 'منظومة ذكاء اصطناعي سريرية مزدوجة تجمع بين التوليد السحابي المقيد (Gemini 1.5 Flash) والمحرك المحلي المدمج، مقيدة بنسبة 100% بـ 25 مصدراً طبياً عالمياً معتمداً ومحصنة ضد التشخيص ووصف الجرعات.'
-              : 'Dual-engine clinical AI system combining Google Gemini 1.5 Flash with an instant offline deterministic RAG engine. 100% bounded by 25 verified authorities (WHO, CDC, MedlinePlus, NHS, NIDDK, ADA).'}
+              ? 'نظام ذكاء اصطناعي سريري هجين مقيد بنسبة 100% بـ 25 مصدراً طبياً عالمياً معتمداً، محصن ضد أخطاء الجرعات والتشخيص، ومبرمج لدعم المريض باللهجة الدارجة ورفع الوعي الصحي المجتمعي.'
+              : 'Evidence-grounded dual-engine clinical AI prototype strictly bounded by 25 authoritative health organizations. Zero hallucination, safe triage, and native dialect fluency.'}
           </p>
 
-          {/* Student Names & Roles (Academic Students) */}
-          <div className="w-full max-w-4xl p-4 sm:p-5 rounded-3xl bg-slate-900/85 border border-teal-500/30 backdrop-blur-xl shadow-2xl">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-2.5 mb-3 px-1">
-              <span className="text-xs uppercase tracking-widest text-teal-400 font-extrabold flex items-center gap-1.5">
+          {/* Student Names (Pure Names, No Roles) */}
+          <div className="w-full max-w-4xl p-4 sm:p-5 rounded-3xl bg-slate-900/80 border border-teal-500/30 backdrop-blur-xl shadow-2xl">
+            <div className="flex items-center justify-between border-b border-slate-800/80 pb-2.5 mb-3 px-1">
+              <span className="text-xs uppercase tracking-widest text-teal-400 font-extrabold flex items-center gap-2">
                 <Users className="w-4 h-4" />
                 {isAr ? 'فريق العمل والطلبة الباحثين (Group 01):' : 'Project Researchers & Students (Group 01):'}
               </span>
@@ -235,20 +239,20 @@ export default function PresentationPage() {
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 text-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-start">
               {teamMembers.map((member, idx) => (
                 <div
                   key={idx}
-                  className={`p-3 rounded-2xl bg-slate-800/80 border ${member.color} hover:bg-slate-800 transition-all shadow-sm`}
+                  className={`p-3.5 rounded-2xl border ${member.color} hover:border-teal-400/60 transition-all duration-300 shadow-sm flex items-center gap-2.5`}
                 >
-                  <p className="font-extrabold text-xs sm:text-sm text-slate-100 mb-0.5">
-                    {isAr ? member.nameAr : member.nameEn}
-                  </p>
-                  <p className="text-[10px] text-slate-400 font-mono">
-                    {isAr ? member.nameEn : member.nameAr}
-                  </p>
-                  <div className="mt-2 pt-1.5 border-t border-slate-700/60 flex items-center justify-between text-[10px] font-semibold text-teal-400">
-                    <span>{isAr ? member.roleAr : member.roleEn}</span>
+                  <span className={`w-2 h-2 rounded-full ${member.dotColor} shrink-0`} />
+                  <div>
+                    <p className="font-extrabold text-xs sm:text-sm text-slate-100">
+                      {isAr ? member.nameAr : member.nameEn}
+                    </p>
+                    <p className="text-[10px] text-slate-400 font-mono mt-0.5">
+                      {isAr ? member.nameEn : member.nameAr}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -258,84 +262,269 @@ export default function PresentationPage() {
       ),
     },
 
-    // SLIDE 2: PROBLEM STATEMENT & MOTIVATION
+    // ==========================================
+    // SLIDE 2: EPIDEMIOLOGICAL BURDEN & PROBLEM
+    // ==========================================
     {
       id: 2,
-      badge: isAr ? 'السياق والتحدي الطبي' : 'Clinical Problem & Threat Landscape',
-      title: isAr ? 'التحدي الطبي: وباء السكري ومخاطر المعلومات المضللة' : 'The Challenge: Diabetes Epidemic & Medical Misinformation',
+      badge: isAr ? 'السياق والعبء الوبائي' : 'Epidemiological Burden',
+      title: isAr
+        ? 'عبء وباء السكري: تحدٍ صحي واقتصادي متسارع في العراق والعالم'
+        : 'The Global & Regional Diabetes Epidemic Burden',
       subtitle: isAr
-        ? 'لماذا تفشل نماذج الذكاء الاصطناعي العامة في التثقيف الطبي وتُعرّض حياة المرضى للخطر؟'
-        : 'Why standard non-grounded LLMs are hazardous for direct diabetes patient education',
+        ? 'أرقام انتشار متصاعدة، نصف الحالات غير مشخصة، ومضاعفات مدمرة تستنزف المنظومة الصحية'
+        : 'Skyrocketing prevalence, delayed diagnosis windows, and severe multi-organ complications',
       speakerNotes: isAr
-        ? 'ركز على أرقام وباء السكري، ثم خطر الوصفات العشبية، ومأزق نماذج الشات بوت العامة التي تختلق جرعات قاتلة وروابط وهمية منقطعة 404.'
-        : 'Highlight regional prevalence, deadly folk remedy myths, and uncontrolled hallucinations in generic LLMs.',
+        ? 'نوضح للدكتور حجم المشكلة: أكثر من 537 مليون مصاب عالمياً، ومعدلات تفوق 14-17% في المنطقة، مع خطورة أن 50% من المرضى لا يعلمون بإصابتهم إلا بعد حدوث مضاعفات.'
+        : 'Present key epidemiological figures: 537M global cases, 14-17% regional prevalence, and the silent 50% undiagnosed window.',
       render: () => (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto h-full items-center">
-          <div className="p-6 rounded-3xl bg-slate-900/90 border border-rose-500/40 shadow-xl flex flex-col justify-between h-full backdrop-blur-md">
+          <div className="p-6 rounded-3xl bg-slate-900/80 border border-rose-500/40 shadow-xl flex flex-col justify-between h-full backdrop-blur-md">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center mb-4 border border-rose-500/30">
+                <Flame className="w-6 h-6" />
+              </div>
+              <span className="text-[11px] font-mono text-rose-400 font-bold uppercase tracking-wider block mb-1">
+                {isAr ? 'أرقام الانتشار الكبرى' : 'Epidemic Scale'}
+              </span>
+              <h3 className="text-base sm:text-lg font-bold text-slate-100 mb-2">
+                {isAr ? '537+ مليون مصاب عالمياً' : '537M+ Adults Globally'}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'تسجل منطقة الشرق الأوسط والعراق واحدة من أعلى نسب الإصابة بالسكري من النوع الثاني (تتجاوز 14-17%) نتيجة تغير أنماط التغذية وقلة النشاط البدني والاستعداد الوراثي.'
+                  : 'The Middle East and Iraq report one of the highest global prevalence rates (>14-17%) driven by rapid lifestyle changes and genetic susceptibility.'}
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-rose-400 font-semibold flex items-center gap-1.5">
+              <Activity className="w-3.5 h-3.5 shrink-0" />
+              <span>{isAr ? 'توقعات بارتفاع إلى 783 مليون بحلول 2045' : 'Projected 783M cases by 2045 (IDF)'}</span>
+            </div>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-slate-900/80 border border-amber-500/40 shadow-xl flex flex-col justify-between h-full backdrop-blur-md">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4 border border-amber-500/30">
+                <AlertTriangle className="w-6 h-6" />
+              </div>
+              <span className="text-[11px] font-mono text-amber-400 font-bold uppercase tracking-wider block mb-1">
+                {isAr ? 'القاتل الصامت' : 'Silent Window'}
+              </span>
+              <h3 className="text-base sm:text-lg font-bold text-slate-100 mb-2">
+                {isAr ? '50% غير مشخصين مبكراً' : '50% Live Undiagnosed'}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'يتطور المرض بصمت لسنوات دون أعراض حادة. يكتشف الكثيرون إصابتهم بالصدفة بعد أن تكون الأوعية الدموية الدقيقة قد بدأت بالتلف بالفعل في مرحلة ما قبل السكري.'
+                  : 'Type 2 progresses quietly without acute symptoms. Half of patients remain undiagnosed until microvascular and macrovascular damage is already underway.'}
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-amber-400 font-semibold flex items-center gap-1.5">
+              <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
+              <span>{isAr ? 'تأخر تشخيصي يتراوح بين 4 إلى 7 سنوات' : 'Average 4-7 years diagnostic delay'}</span>
+            </div>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-slate-900/80 border border-cyan-500/40 shadow-xl flex flex-col justify-between h-full backdrop-blur-md">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-4 border border-cyan-500/30">
+                <HeartPulse className="w-6 h-6" />
+              </div>
+              <span className="text-[11px] font-mono text-cyan-400 font-bold uppercase tracking-wider block mb-1">
+                {isAr ? 'فاتورة المضاعفات' : 'Complications Toll'}
+              </span>
+              <h3 className="text-base sm:text-lg font-bold text-slate-100 mb-2">
+                {isAr ? 'مضاعفات متعددة الأعضاء' : 'Multi-Organ Damage'}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'إهمال السكر يؤدي إلى الفشل الكلوي (السبب الأول للغسيل الكلوي)، اعتلال الشبكية وفقدان البصر، البتر السكري للأطراف، ومضاعفات القلب والجلطات الدماغية.'
+                  : 'Chronic hyperglycemia triggers diabetic nephropathy, retinopathy blindness, peripheral neuropathy amputations, and cardiovascular morbidity.'}
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-cyan-400 font-semibold flex items-center gap-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+              <span>{isAr ? 'التثقيف المبكر يمنع 80% من المضاعفات' : 'Education prevents 80% of complications'}</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+
+    // ==========================================
+    // SLIDE 3: PATHOPHYSIOLOGY OF TYPE 2 DIABETES
+    // ==========================================
+    {
+      id: 3,
+      badge: isAr ? 'الفسلجة الطبية وآلية المرض' : 'Pathophysiology of T2D',
+      title: isAr
+        ? 'الفسلجة السريرية: كيف تحدث مقاومة الإنسولين وإجهاد البنكرياس؟'
+        : 'Clinical Pathophysiology: Insulin Resistance & Beta-Cell Failure',
+      subtitle: isAr
+        ? 'الفهم الطبي الرصين لآليات المرض الثلاث: مقاومة المستقبلات، إجهاد خلايا بيتا، وإنتاج الكبد المفرط'
+        : 'The core triad: peripheral receptor resistance, pancreatic exhaustion, and hepatic dysregulation',
+      speakerNotes: isAr
+        ? 'هذا السلايد يبهر الأستاذ الطبيب: نوضح أن السكري النوع 2 ليس نقصاً أولياً في الإنسولين، بل مقاومة في العضلات والكبد تجبر البنكرياس على العمل المفرط حتى يتعب، ونقارنه بالنوع الأول المناعي.'
+        : 'Impress the medical examiner by explaining that Type 2 starts with peripheral resistance and beta-cell compensatory hyperinsulinemia, unlike Type 1 autoimmune destruction.',
+      render: () => (
+        <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
+          {/* 3 Mechanisms Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <div className="p-5 rounded-3xl bg-slate-900/80 border border-teal-500/40 shadow-xl backdrop-blur-md">
+              <div className="w-10 h-10 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3 border border-teal-500/30">
+                <Microscope className="w-5 h-5" />
+              </div>
+              <span className="text-[10px] font-mono text-teal-400 font-bold uppercase tracking-wider block mb-1">
+                Mechanism 01
+              </span>
+              <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-1.5">
+                {isAr ? '1. مقاومة الإنسولين المحيطية' : '1. Insulin Resistance'}
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'تفقد خلايا العضلات والأنسجة الدهنية حساسيتها للإنسولين، فتغلق بوابات امتصاص الجلوكوز رغم وفرة الإنسولين في مجرى الدم.'
+                  : 'Skeletal muscles and adipose tissue receptors lose insulin sensitivity, blocking glucose uptake despite circulating insulin.'}
+              </p>
+            </div>
+
+            <div className="p-5 rounded-3xl bg-slate-900/80 border border-amber-500/40 shadow-xl backdrop-blur-md">
+              <div className="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3 border border-amber-500/30">
+                <HeartPulse className="w-5 h-5" />
+              </div>
+              <span className="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block mb-1">
+                Mechanism 02
+              </span>
+              <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-1.5">
+                {isAr ? '2. إجهاد خلايا بيتا بالبنكرياس' : '2. Beta-Cell Exhaustion'}
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'يعوض البنكرياس بضخ كميات مضاعفة من الإنسولين (فرط الإنسولين التعويضي)، ومع مرور السنوات تفقد خلايا بيتا كفاءتها وتتراجع قدرتها الإفرازية.'
+                  : 'Pancreatic beta-cells overcompensate with hyperinsulinemia, leading to cellular stress, glucotoxicity, and progressive secretory decline.'}
+              </p>
+            </div>
+
+            <div className="p-5 rounded-3xl bg-slate-900/80 border border-indigo-500/40 shadow-xl backdrop-blur-md">
+              <div className="w-10 h-10 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-3 border border-indigo-500/30">
+                <Layers className="w-5 h-5" />
+              </div>
+              <span className="text-[10px] font-mono text-indigo-400 font-bold uppercase tracking-wider block mb-1">
+                Mechanism 03
+              </span>
+              <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-1.5">
+                {isAr ? '3. زيادة إنتاج الكبد للجلوكوز' : '3. Hepatic Glucose Output'}
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'يفقد الكبد إشارته الكابحة فيستمر في ضخ الجلوكوز إلى الدم حتى أثناء الصيام والنوم، وهو السبب الرئيسي لارتفاع السكر الصباحي.'
+                  : 'The liver fails to sense insulin suppression, continuously pumping endogenous glucose into the bloodstream even during fasting.'}
+              </p>
+            </div>
+          </div>
+
+          {/* Type 1 vs Type 2 Comparison Pill */}
+          <div className="p-4 rounded-3xl bg-slate-900/90 border border-teal-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+            <div className="text-start">
+              <h5 className="font-extrabold text-sm text-slate-100 flex items-center gap-2">
+                <Scale className="w-4 h-4 text-teal-400" />
+                <span>{isAr ? 'الفارق الجوهري بين السكري النوع 1 والنوع 2:' : 'Key Distinction: Type 1 vs Type 2'}</span>
+              </h5>
+              <p className="text-xs text-slate-300 mt-1 font-light">
+                {isAr
+                  ? 'النوع 1 تلف مناعي ذاتي مطلق لخلايا بيتا يتطلب إنسولين فوري، بينما النوع 2 اضطراب أيضي تدريجي يرتبط بنمط الحياة ومقاومة الإنسولين ويمكن السيطرة عليه بالحمية والرياضة والأدوية.'
+                  : 'Type 1 is autoimmune destruction of beta-cells requiring lifelong insulin; Type 2 is a progressive metabolic lifestyle disorder manageable with diet, exercise, and oral agents.'}
+              </p>
+            </div>
+            <span className="px-3 py-1.5 rounded-xl bg-teal-950/80 text-teal-300 border border-teal-800 text-xs font-mono font-bold shrink-0">
+              {isAr ? 'مرض أيضي سلوكي' : 'Metabolic Etiology'}
+            </span>
+          </div>
+        </div>
+      ),
+    },
+
+    // ==========================================
+    // SLIDE 4: HEALTH LITERACY & MISINFORMATION
+    // ==========================================
+    {
+      id: 4,
+      badge: isAr ? 'فجوة التثقيف ومخاطر الخرافات' : 'Health Literacy & Myths',
+      title: isAr
+        ? 'فجوة الوعي الصحي: خطر الوصفات الشعبية وفخ الذكاء الاصطناعي العام'
+        : 'Health Literacy Gap: Folk Remedy Risks & Generic AI Pitfalls',
+      subtitle: isAr
+        ? 'كيف يدفع المريض العراقي ثمن الشائعات من صحته؟ ولماذا تفشل نماذج الـ AI العامة في التثقيف؟'
+        : 'Dangerous community misconceptions and why ungrounded LLMs hallucinate hazardous advice',
+      speakerNotes: isAr
+        ? 'نستعرض الواقع المجتمعي: خرافات شرب ماء البامية أو القرفة كبديل للإنسولين، وخرافة أن العسل والتمر لا يرفعان السكر، ومخاطر الشات بوت العام مثل ChatGPT الذي يختلق جرعات عشوائية دون فحص الكلى.'
+        : 'Highlight real regional folk remedy myths (boiled okra, cinnamon replacing insulin, raw honey belief) and generic AI dangers (fabricating dosages without lab reviews).',
+      render: () => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto h-full items-center">
+          <div className="p-6 rounded-3xl bg-slate-900/80 border border-rose-500/40 shadow-xl flex flex-col justify-between h-full backdrop-blur-md">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center mb-4 border border-rose-500/30">
                 <AlertTriangle className="w-6 h-6" />
               </div>
               <span className="text-[11px] font-mono text-rose-400 font-bold uppercase tracking-wider block mb-1">
-                {isAr ? 'أزمة انتشار وبائية' : 'Global & Regional Crisis'}
+                {isAr ? 'خرافات متوارثة' : 'Folk Remedy Traps'}
               </span>
               <h3 className="text-base sm:text-lg font-bold text-slate-100 mb-2">
-                {isAr ? '1. الانتشار المرتفع للسكري' : '1. High Regional Prevalence'}
+                {isAr ? '1. بدائل الأعشاب الزائفة' : '1. False Herbal Cures'}
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
                 {isAr
-                  ? 'أكثر من 537 مليون مصاب بالسكري عالمياً، مع تسجيل أعلى معدلات الانتشار في المنطقة، وتأخر كبير في التشخيص يؤدي لمضاعفات مبكرة وخطيرة في الكلى والأعصاب والشبكية.'
-                  : 'Over 537 million adults live with diabetes globally. Delayed screening frequently causes irreversible damage to kidneys, nerves, and retina.'}
+                  ? 'انتشار معتقدات مضللة مثل: "منقوع البامية أو القرفة يغني عن الإنسولين والأدوية"، مما يدفع المريض لإيقاف علاجه والدخول في غيبوبة كيتونية حادة (DKA) مهددة للحياة.'
+                  : 'Dangerous myths claim boiled okra water or cinnamon cure diabetes, causing patients to discontinue therapy and enter life-threatening DKA crises.'}
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-rose-400 font-semibold flex items-center gap-1.5">
               <Flame className="w-3.5 h-3.5 shrink-0" />
-              <span>{isAr ? 'خطر صامت يهدد ملايين العائلات' : 'Silent organ complications risk'}</span>
+              <span>{isAr ? 'سبب مباشر لانتكاسات الطوارئ' : 'Direct cause of acute ICU admissions'}</span>
             </div>
           </div>
 
-          <div className="p-6 rounded-3xl bg-slate-900/90 border border-amber-500/40 shadow-xl flex flex-col justify-between h-full backdrop-blur-md">
+          <div className="p-6 rounded-3xl bg-slate-900/80 border border-amber-500/40 shadow-xl flex flex-col justify-between h-full backdrop-blur-md">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4 border border-amber-500/30">
-                <ShieldAlert className="w-6 h-6" />
+                <BookOpen className="w-6 h-6" />
               </div>
               <span className="text-[11px] font-mono text-amber-400 font-bold uppercase tracking-wider block mb-1">
-                {isAr ? 'خرافات متوارثة قاتلة' : 'Lethal Misinformation'}
+                {isAr ? 'مفهوم السكر الطبيعي' : 'Natural Sugar Fallacy'}
               </span>
               <h3 className="text-base sm:text-lg font-bold text-slate-100 mb-2">
-                {isAr ? '2. الوصفات والخرافات الشعبية' : '2. Folk Remedies & Myths'}
+                {isAr ? '2. خرافة التمر والعسل' : '2. Dates & Honey Myth'}
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
                 {isAr
-                  ? 'وقوع المرضى ضحايا لمعتقدات خاطئة شائعة مثل: "التمر والعسل لا يرفعان السكر لأنهما طبيعيان"، أو "شرب مغلي الأعشاب يغني عن الأدوية والإنسولين"، مما يسبب غيبوبة كيتونية (DKA).'
-                  : 'Patients fall victim to dangerous myths: believing honey and dates do not spike glucose, or replacing doctor-prescribed therapy with herbal concoctions leading to acute DKA.'}
+                  ? 'الاعتقاد السائد بأن "العسل الطبيعي أو التمر لا يرفعان السكر لأنهما طبيعيان". بينما علمياً كلاهما كربوهيدرات غنية بالجلوكوز والفركتوز ترفع السكر سريعاً وتتطلب حساباً دقيقاً.'
+                  : 'The belief that natural honey and dates do not spike glucose. Physiologically, both are carbohydrate-dense sugars that drastically elevate glycemia.'}
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-amber-400 font-semibold flex items-center gap-1.5">
-              <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
-              <span>{isAr ? 'تأخر علاجي مأساوي يؤدي لغيبوبة DKA' : 'Direct trigger of severe acute crises'}</span>
+              <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+              <span>{isAr ? 'تصحيح علمي بدون حرمان كامل' : 'Evidence-based portion education'}</span>
             </div>
           </div>
 
-          <div className="p-6 rounded-3xl bg-slate-900/90 border border-teal-500/40 shadow-xl flex flex-col justify-between h-full backdrop-blur-md">
+          <div className="p-6 rounded-3xl bg-slate-900/80 border border-teal-500/40 shadow-xl flex flex-col justify-between h-full backdrop-blur-md">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-4 border border-teal-500/30">
                 <Cpu className="w-6 h-6" />
               </div>
               <span className="text-[11px] font-mono text-teal-400 font-bold uppercase tracking-wider block mb-1">
-                {isAr ? 'هلوسة النماذج العامة' : 'LLM Hallucination Trap'}
+                {isAr ? 'هلوسة النماذج العامة' : 'LLM Hallucinations'}
               </span>
               <h3 className="text-base sm:text-lg font-bold text-slate-100 mb-2">
-                {isAr ? '3. هلوسة الذكاء الاصطناعي العام' : '3. Generic LLM Prescription'}
+                {isAr ? '3. مخاطر الـ AI العام' : '3. Generic AI Prescriptions'}
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
                 {isAr
-                  ? 'نماذج الذكاء الاصطناعي العامة غير المقيدة تختلق جرعات أدوية عشوائية (مثل تحديد عدد حبات الميتفورمين أو وحدات الإنسولين)، وتؤلف روابط ويب وهمية منقطعة (404 Broken URLs).'
+                  ? 'روبوتات الذكاء الاصطناعي العامة تختلق روابط إنترنت وهمية 404، وتجرؤ على تحديد جرعات أدوية عشوائية للمريض دون معرفة وظائف كليته، مما يشكل خطراً قانونياً وسريرياً جسيماً.'
                   : 'Generic chatbots fabricate non-existent URLs and attempt to prescribe pharmacological dosages without renal lab checks, creating severe medicolegal hazards.'}
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-teal-400 font-semibold flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+              <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
               <span>{isAr ? 'الحل: منظومة Group 01 المقيدة 100%' : 'Solution: Strict Grounded Group 01 AI'}</span>
             </div>
           </div>
@@ -343,96 +532,24 @@ export default function PresentationPage() {
       ),
     },
 
-    // SLIDE 3: PROJECT VISION & CORE PILLARS
+    // ==========================================
+    // SLIDE 5: 25 VERIFIED CLINICAL AUTHORITIES
+    // ==========================================
     {
-      id: 3,
-      badge: isAr ? 'الرؤية والركائز الأساسية' : 'Architectural Pillars',
+      id: 5,
+      badge: isAr ? 'المرجعية العلمية المعتمدة' : 'Verified Clinical Authorities',
       title: isAr
-        ? 'رؤية المنظومة: أربع ركائز سريرية وهندسية لا مساومة عليها'
-        : 'System Vision: Four Unyielding Clinical & Architectural Pillars',
-      subtitle: isAr
-        ? 'بناء نظام تثقيفي سريري رصين يحترم الأمان الطبي أولاً وسرعة الاستجابة ودقة المصادر'
-        : 'Engineered for university competition excellence, patient safety, and zero clinical hallucination',
-      speakerNotes: isAr
-        ? 'اشرح الركائز الأربع: التقييد السريري الصارم، خطوط الأمان الحمراء، المعمارية المزدوجة التي تمنع التوقف، وفهم اللهجة المحلية.'
-        : 'Walk through the 4 pillars: Strict Grounding, Hard Safety Guardrails, Dual-Engine Reliability, and Dialect Fluency.',
-      render: () => (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-4xl mx-auto h-full items-center">
-          {[
-            {
-              icon: <BookOpen className="w-6 h-6 text-teal-400" />,
-              num: '01',
-              title: isAr ? '1. تقييد سريري مطلق (Zero Hallucination)' : '1. Strict Clinical Grounding',
-              desc: isAr
-                ? 'النظام لا يبتكر أي معلومة من خارج الـ 25 مصدراً الطبية المعتمدة، وكل نص يرفق برابط مباشر ونشط للمنظمة الطبية الرسمية.'
-                : '100% of educational responses are derived from verified official sources with validated active live URLs.',
-            },
-            {
-              icon: <Lock className="w-6 h-6 text-emerald-400" />,
-              num: '02',
-              title: isAr ? '2. خطوط الأمان الحمراء (Hard Guardrails)' : '2. Hard Clinical Guardrails',
-              desc: isAr
-                ? 'رفض قاطع لتقديم تشخيصات شخصية أو تحديد جرعات أدوية وإنسولين، مع نظام رصد فوري لحالات الطوارئ (DKA والهبوط الحاد).'
-                : 'Zero tolerance for personal diagnosis or medication dosing. Instant escalation for acute emergencies (DKA & hypoglycemia).',
-            },
-            {
-              icon: <Layers className="w-6 h-6 text-cyan-400" />,
-              num: '03',
-              title: isAr ? '3. معمارية مزدوجة مرنة (Dual-Engine RAG)' : '3. Dual-Engine Resilience',
-              desc: isAr
-                ? 'تكامل سحابي فائق مع Gemini 1.5 Flash مع وجود محرك RAG محلي سريري فائق السرعة يعمل بدون إنترنت وبلا أي توقف.'
-                : 'Cloud intelligence via Gemini 1.5 Flash backed by an instant offline deterministic RAG engine (<20ms latency).',
-            },
-            {
-              icon: <Globe className="w-6 h-6 text-amber-400" />,
-              num: '04',
-              title: isAr ? '4. ذكاء ثقافي ولغوي محلي (Dialect IQ)' : '4. Cultural & Dialect IQ',
-              desc: isAr
-                ? 'فهم عميق للهجة الدارجة والمصطلحات الشائعة (ريوك، خمول ورا الغدا، تمر وعسل، ركفة، ظاهرة الفجر) والرد بلغة سريرية مريحة ومفهومة للمريض.'
-                : 'Native comprehension of regional dialect phrases and dietary customs, explaining medical science in accessible patient terms.',
-            },
-          ].map((pillar, idx) => (
-            <div
-              key={idx}
-              className="p-5 rounded-3xl bg-slate-900/85 border border-slate-800 hover:border-teal-500/50 transition-all shadow-xl flex gap-4 items-start backdrop-blur-md"
-            >
-              <div className="p-3.5 rounded-2xl bg-slate-800/90 shrink-0 border border-slate-700 shadow-md">
-                {pillar.icon}
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-teal-950/70 text-teal-400 border border-teal-800">
-                    Pillar {pillar.num}
-                  </span>
-                  <h4 className="font-extrabold text-sm sm:text-base text-slate-100">
-                    {pillar.title}
-                  </h4>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-                  {pillar.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      ),
-    },
-
-    // SLIDE 4: THE 25 VERIFIED CLINICAL SOURCES & 5 KNOWLEDGE MODULES
-    {
-      id: 4,
-      badge: isAr ? 'قاعدة المعرفة السريرية المعتمدة' : 'Verified Knowledge Base',
-      title: isAr
-        ? '25 مصدراً رسمياً معتمداً عبر 5 ملفات معيارية مفهرسة (HTTP 200 OK)'
+        ? 'المرجعية العلمية: 25 مصدراً دولياً معتمداً عبر 5 ملفات معيارية'
         : '25 Official Clinical Authorities Across 5 Structured Modules',
       subtitle: isAr
-        ? 'فحص مباشر للروابط الرسمية التابعة لأعلى المنظمات الصحية الدولية مع فهرس JSON رقمي'
+        ? 'فحص مباشر لروابط أعلى المنظمات الصحية العالمية مع فهرس رقمي يمنع الروابط الوهمية تماماً'
         : 'Direct active live links from WHO, CDC, MedlinePlus (NIH), NHS UK, NIDDK, and ADA',
       speakerNotes: isAr
-        ? 'أكد للجنة أن جميع المصادر الـ 25 تم التحقق من روابطها حياً (HTTP 200 OK)، وهي مصنفة في فهرس verified_sources_index.json ومقسمة إلى 5 ملفات معيارية تغطي كافة جوانب السكري.'
-        : 'Emphasize that all 25 clinical URLs were verified live with HTTP 200 OK and organized into 5 structured Markdown modules in knowledge_base/.',
+        ? 'نؤكد للجنة أن كافة معلومات البوت مستقاة من 25 مصدراً رسمياً خضعت للتحقق المباشر بروابط HTTP 200 OK، مقسمة على 5 ملفات معيارية مفهرسة برمجياً في verified_sources_index.json.'
+        : 'Emphasize that 100% of educational content is indexed from 25 active clinical URLs (WHO, CDC, ADA, NIH, NHS, NIDDK) with zero broken 404 links.',
       render: () => (
         <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
+          {/* 6 Major Organizations Badges */}
           <div className="grid grid-cols-2 sm:grid-cols-6 gap-2.5 mb-4 text-center">
             {[
               { name: 'WHO', label: isAr ? 'منظمة الصحة العالمية' : 'World Health Org', count: '5 Sources', color: 'from-blue-500 to-cyan-400' },
@@ -456,9 +573,9 @@ export default function PresentationPage() {
 
           <div className="p-4 sm:p-5 rounded-3xl bg-slate-900/85 border border-teal-500/30 backdrop-blur-xl shadow-xl">
             <h4 className="text-xs uppercase tracking-widest text-teal-400 font-extrabold mb-3 flex items-center justify-between">
-              <span className="flex items-center gap-1.5">
-                <ShieldAlert className="w-4 h-4 text-emerald-400" />
-                {isAr ? 'ملفات قاعدة المعرفة الخمسة وبروتوكول التحقق الصارم:' : '5 Knowledge Modules & Live Verification Protocol:'}
+              <span className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                {isAr ? 'ملفات قاعدة المعرفة الخمسة المفهرسة برمجياً:' : '5 Knowledge Base Modules & Verification Index:'}
               </span>
               <span className="px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-800 flex items-center gap-1 font-mono text-xs font-bold">
                 <CheckCircle2 className="w-3.5 h-3.5" /> 25/25 HTTP 200 OK
@@ -484,11 +601,11 @@ export default function PresentationPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 font-light">
               <div className="flex items-center gap-2 p-2 rounded-xl bg-slate-800/60 border border-slate-700/60">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>{isAr ? 'فهرس verified_sources_index.json يمنع اختلاق أي رابط وهمي.' : 'verified_sources_index.json guarantees zero hallucinated links.'}</span>
+                <span>{isAr ? 'فهرس verified_sources_index.json يضمن دقة الاقتباس السريري.' : 'verified_sources_index.json guarantees zero hallucinated links.'}</span>
               </div>
               <div className="flex items-center gap-2 p-2 rounded-xl bg-slate-800/60 border border-slate-700/60">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>{isAr ? 'فلتر آلي في الباك إند يستبعد أي رابط خارج القائمة المعتمدة.' : 'Backend citation sanitizer strips any unapproved external URL.'}</span>
+                <span>{isAr ? 'فلتر آلي في الباك إند يستبعد أي رابط خارجي غير معتمد.' : 'Backend citation sanitizer strips any unapproved external URL.'}</span>
               </div>
             </div>
           </div>
@@ -496,51 +613,217 @@ export default function PresentationPage() {
       ),
     },
 
-    // SLIDE 5: SYSTEM ARCHITECTURE & DUAL-ENGINE PIPELINE
+    // ==========================================
+    // SLIDE 6: LIFESTYLE MEDICINE & THE ABCS
+    // ==========================================
     {
-      id: 5,
-      badge: isAr ? 'المعمارية الهندسية وحزمة التقنيات' : 'Engineering Architecture & Tech Stack',
+      id: 6,
+      badge: isAr ? 'طب نمط الحياة والرعاية الذاتية' : 'Lifestyle Medicine & ABCs',
       title: isAr
-        ? 'معمارية RAG المزدوجة: Next.js 14 و Gemini 1.5 Flash والمحرك المحلي'
-        : 'Dual-Engine RAG Architecture: Next.js 14, Gemini 1.5 & Local Failover',
+        ? 'طب نمط الحياة وقاعدة الـ ABCs: ركائز السيطرة المثبتة علمياً'
+        : 'Lifestyle Medicine & The ABCs: Core Pillars of Glycemic Control',
       subtitle: isAr
-        ? 'مسار معالجة هجين يجمع ذكاء Gemini السحابي وسرعة RAG المحلي مع تحول ذكي في 3.5 ثانية'
-        : 'Resilient pipeline with Next.js App Router, cloud generative intelligence, and instant offline failover',
+        ? 'طريقة طبق الغذاء الصحي (Plate Method)، النشاط البدني، والمحاور الأربعة لحماية القلب والشرايين'
+        : 'The Diabetes Plate Method, physical activity prescription, and the 4 ABCs cardiovascular framework',
       speakerNotes: isAr
-        ? 'بين للجنة التحكيم دور معمارية Next.js 14 والـ App Router، ودور نموذج Gemini 1.5 Flash السحابي، وميزة محرك RAG المحلي الذي يضمن استمرار العرض 100% حتى لو انقطع الإنترنت بفضل مؤقت الـ 3.5 ثانية.'
-        : 'Explain Next.js 14 architecture, Google Gemini 1.5 Flash cloud engine, and the 3.5s failover guarantee to the local offline RAG engine.',
+        ? 'نركز مع الدكتور على طب نمط الحياة: كيف يوجه البوت المريض لتقسيم الصحن (50% خضار، 25% بروتين، 25% نشويات)، وممارسة 150 دقيقة مشي أسبوعياً، مع شرح قاعدة ABCs الأربعة.'
+        : 'Highlight Lifestyle Medicine: Diabetes Plate Method (50% non-starchy veg, 25% lean protein, 25% complex carbs), 150 min weekly exercise, and the ABCs self-care goals.',
+      render: () => (
+        <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            {/* Left: Plate Method & Physical Activity */}
+            <div className="p-4 rounded-3xl bg-slate-900/90 border border-teal-500/30 shadow-xl">
+              <h4 className="text-xs uppercase tracking-wider text-teal-400 font-extrabold mb-3 flex items-center gap-2">
+                <Activity className="w-4 h-4" />
+                {isAr ? 'طريقة طبق السكري المعتمدة (ADA):' : 'The Diabetes Plate Method (ADA):'}
+              </h4>
+              <div className="space-y-2 text-xs">
+                <div className="p-2.5 rounded-2xl bg-emerald-950/40 border border-emerald-800/80 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-emerald-300">{isAr ? 'نصف الصحن (50%)' : 'Half Plate (50%)'}</span>
+                    <p className="text-[11px] text-slate-300">{isAr ? 'خضروات غير نشوية غنية بالألياف' : 'Non-starchy high-fiber vegetables'}</p>
+                  </div>
+                  <span className="font-mono font-extrabold text-emerald-300 text-sm">50%</span>
+                </div>
+
+                <div className="p-2.5 rounded-2xl bg-cyan-950/40 border border-cyan-800/80 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-cyan-300">{isAr ? 'ربع الصحن (25%)' : 'Quarter Plate (25%)'}</span>
+                    <p className="text-[11px] text-slate-300">{isAr ? 'بروتين صافٍ (سمك، دجاج، بيض، بقوليات)' : 'Lean protein (poultry, fish, legumes)'}</p>
+                  </div>
+                  <span className="font-mono font-extrabold text-cyan-300 text-sm">25%</span>
+                </div>
+
+                <div className="p-2.5 rounded-2xl bg-amber-950/40 border border-amber-800/80 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-amber-300">{isAr ? 'ربع الصحن (25%)' : 'Quarter Plate (25%)'}</span>
+                    <p className="text-[11px] text-slate-300">{isAr ? 'كربوهيدرات معقدة ذات مؤشر جلايسيمي منخفض' : 'Low-GI complex carbohydrates'}</p>
+                  </div>
+                  <span className="font-mono font-extrabold text-amber-300 text-sm">25%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: The ABCs of Diabetes */}
+            <div className="p-4 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-xl">
+              <h4 className="text-xs uppercase tracking-wider text-teal-400 font-extrabold mb-3 flex items-center gap-2">
+                <Heart className="w-4 h-4 text-rose-400" />
+                {isAr ? 'قاعدة الـ ABCs لحماية القلب والأوعية:' : 'The ABCs of Diabetes Self-Care:'}
+              </h4>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
+                  <span className="font-bold text-teal-300 block">A: A1C</span>
+                  <span className="text-[11px] text-slate-300">{isAr ? 'الهدف غالباً أقل من 7%' : 'Target: < 7.0%'}</span>
+                </div>
+                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
+                  <span className="font-bold text-cyan-300 block">B: Blood Pressure</span>
+                  <span className="text-[11px] text-slate-300">{isAr ? 'الهدف أقل من 130/80' : 'Target: < 130/80'}</span>
+                </div>
+                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
+                  <span className="font-bold text-amber-300 block">C: Cholesterol</span>
+                  <span className="text-[11px] text-slate-300">{isAr ? 'ضبط الدهون وضبط الـ LDL' : 'LDL Management'}</span>
+                </div>
+                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
+                  <span className="font-bold text-rose-300 block">S: Stop Smoking</span>
+                  <span className="text-[11px] text-slate-300">{isAr ? 'امتناع تام عن التبغ' : 'Zero Tobacco'}</span>
+                </div>
+              </div>
+
+              {/* Preventative Routine Checks */}
+              <div className="mt-3 pt-2.5 border-t border-slate-800 text-[11px] text-slate-300 space-y-1">
+                <p>• {isAr ? 'فحص يومي للقدمين لمنع القرح والغرغرينا.' : 'Daily foot inspection to prevent ulcers.'}</p>
+                <p>• {isAr ? 'فحص سنوي لقاع العين لرصد اعتلال الشبكية.' : 'Annual dilated retinal eye examination.'}</p>
+                <p>• {isAr ? 'فحص سنوي لوظائف الكلى والزلال البولي (UACR).' : 'Annual kidney microalbumin check (UACR).'}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-3 rounded-2xl bg-slate-900/80 border border-teal-500/30 text-xs text-slate-300 flex items-center justify-between">
+            <span>{isAr ? 'المشي السريع لمدة 150 دقيقة أسبوعياً يحسن حساسية الإنسولين ويخفض التراكمي بمقدار 0.5% - 0.7%.' : '150 min/week moderate aerobic activity lowers HbA1c by 0.5-0.7% naturally.'}</span>
+            <span className="text-teal-400 font-mono text-[11px] font-bold">CDC Guidelines</span>
+          </div>
+        </div>
+      ),
+    },
+
+    // ==========================================
+    // SLIDE 7: MEDICOLEGAL BOUNDARIES & ETHICS
+    // ==========================================
+    {
+      id: 7,
+      badge: isAr ? 'المسؤولية الأخلاقية والقانونية' : 'Medicolegal Boundaries',
+      title: isAr
+        ? 'المسؤولية الطبية: لماذا يرفض البوت قطعاً تحديد الجرعات والتشخيص؟'
+        : 'Medicolegal Boundaries: Strict Refusal of Dosing & Diagnosis',
+      subtitle: isAr
+        ? 'حماية حياة المريض خط أحمر: اشتراط فحص وظائف الكلى (eGFR) والتكامل الآمن مع الطبيب المعالج'
+        : 'Why AI must never dose or diagnose: renal safety clearance (eGFR) and ethical physician triage',
+      speakerNotes: isAr
+        ? 'أهم نقطة يحبها الأستاذ الطبيب: نوضح فلسفة السلامة؛ تحديد جرعة الميتفورمين أو الإنسولين يحتاج فحص كلى eGFR وإنزيمات كبد وتاريخ مريض كامل، لذا يرفض البوت قطعاً وصف أي جرعة ويحيل فوراً للطبيب.'
+        : 'Medical examiners love this slide: explain that Metformin/insulin dosing demands renal clearance (eGFR) and hepatic panels; hence the bot strictly refuses prescription and enforces physician referral.',
+      render: () => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto h-full items-center">
+          <div className="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-xl backdrop-blur-md">
+            <div className="w-11 h-11 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center mb-3 border border-rose-500/30">
+              <Lock className="w-5 h-5" />
+            </div>
+            <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-2">
+              {isAr ? '1. حظر وصف الجرعات وتعديلها' : '1. Absolute Dosing Refusal'}
+            </h4>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3 font-light">
+              {isAr
+                ? 'رفض قاطع لتحديد عدد حبات الميتفورمين (كلوكوفاج) أو وحدات الإنسولين. جرعة الدواء تعتمد حتماً على فحص ترشيح الكلى (eGFR)، ووظائف الكبد، والحالة القلبية التي يحددها الطبيب فقط.'
+                : 'Zero tolerance for medication dosing (Metformin pills, insulin units). Dosing strictly depends on glomerular filtration rate (eGFR) and hepatic function assessed solely by the physician.'}
+            </p>
+            <span className="text-[10px] text-rose-300 font-mono bg-rose-950/60 px-2.5 py-1 rounded-lg border border-rose-800 inline-block font-semibold">
+              {isAr ? 'مبدأ الأمان: لا ضرر ولا ضرار' : 'Primum Non Nocere'}
+            </span>
+          </div>
+
+          <div className="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-xl backdrop-blur-md">
+            <div className="w-11 h-11 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3 border border-amber-500/30">
+              <Stethoscope className="w-5 h-5" />
+            </div>
+            <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-2">
+              {isAr ? '2. رفض التشخيص السريري الفردي' : '2. Non-Diagnostic Triage'}
+            </h4>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3 font-light">
+              {isAr
+                ? 'إذا أدخل المستخدم قراءة فحص (مثل: تراكمي 6.9% أو سكر 135)، يشرح البوت المعايير التثقيفية العامة، لكنه يرفض الجزم بالتشخيص الفردي، لأن التشخيص يتطلب تأكيداً مخبرياً مزدوجاً وتقييماً شاملاً.'
+                : 'When given lab readings, the bot explains standard diagnostic thresholds but explicitly refrains from delivering a definitive personal diagnosis, directing the patient to clinic confirmation.'}
+            </p>
+            <span className="text-[10px] text-amber-300 font-mono bg-amber-950/60 px-2.5 py-1 rounded-lg border border-amber-800 inline-block font-semibold">
+              {isAr ? 'تثقيف توجيهي وليس عيادة بديلة' : 'Supportive Health Triage'}
+            </span>
+          </div>
+
+          <div className="p-5 rounded-3xl bg-slate-900/90 border border-teal-500/40 shadow-xl backdrop-blur-md">
+            <div className="w-11 h-11 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3 border border-teal-500/30">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-2">
+              {isAr ? '3. حماية الخصوصية وكشف الطوارئ' : '3. Privacy & Emergency Alert'}
+            </h4>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3 font-light">
+              {isAr
+                ? 'حجب فوري للبيانات الشخصية الحساسة (PII)، مع كاشف أوتوماتيكي لأعراض الخطر الشديدة (مثل علامات DKA أو هبوط السكر <70 ملغ) لإطلاق تنبيه فوري بالتوجه إلى الطوارئ.'
+                : 'Automated suppression of personally identifiable info (PII), coupled with instant emergency triggers for severe hypoglycemia (<70 mg/dL) or DKA symptoms directing to hospital care.'}
+            </p>
+            <span className="text-[10px] text-teal-300 font-mono bg-teal-950/60 px-2.5 py-1 rounded-lg border border-teal-800 inline-block font-semibold">
+              {isAr ? 'شريط علوي دائم وحماية PII' : 'Continuous Header & PII Guard'}
+            </span>
+          </div>
+        </div>
+      ),
+    },
+
+    // ==========================================
+    // SLIDE 8: TECHNICAL ARCHITECTURE & PIPELINE
+    // ==========================================
+    {
+      id: 8,
+      badge: isAr ? 'المعمارية البرمجية والهندسة' : 'Technical Architecture',
+      title: isAr
+        ? 'معمارية النظام: مسار معالجة هجين يجمع ذكاء Gemini ومحرك RAG المحلي'
+        : 'Engineering Architecture: 4-Stage Resilient RAG Pipeline',
+      subtitle: isAr
+        ? 'بنية تحتية مرنة في Next.js 14 تضمن سرعة الاستجابة (<20ms) وعدم الانقطاع حتى عند بطء الشبكة'
+        : 'Next.js App Router, prompt grounding, instant benchmark matching, and local offline failover',
+      speakerNotes: isAr
+        ? 'نشرح المعمارية التقنية: مسار المعالجة من 4 مراحل يبدأ بتطبيع النص وكشف الأمان، ثم المطابق فائق السرعة، ثم نموذج Gemini السحابي مع محرك RAG المحلي كصمام أمان عند بطء الإنترنت.'
+        : 'Walk through the 4-stage pipeline: Text normalization and safety triage, instant benchmark matcher (<5ms), cloud Gemini 1.5, and the resilient offline local RAG failover.',
       render: () => (
         <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
           {/* Architecture Pipeline Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-center mb-4">
             <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-700 relative shadow-lg">
-              <span className="text-[10px] font-mono text-teal-400 uppercase tracking-widest block mb-1">Step 1</span>
+              <span className="text-[10px] font-mono text-teal-400 uppercase tracking-widest block mb-1">Stage 01</span>
               <h5 className="font-extrabold text-xs sm:text-sm text-slate-100">{isAr ? 'التطبيع والأمان' : 'Normalization'}</h5>
               <p className="text-[11px] text-slate-400 mt-1 leading-tight">{isAr ? 'تطبيع اللهجة، حظر الخصوصية PII، وكشف الطوارئ' : 'Arabic Normalizer & Emergency Detector'}</p>
             </div>
 
+            <div className="p-3.5 rounded-2xl bg-slate-900 border border-cyan-500/50 relative shadow-lg">
+              <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest block mb-1">Stage 02</span>
+              <h5 className="font-extrabold text-xs sm:text-sm text-slate-100">{isAr ? 'المطابق السريع' : 'Instant Matcher'}</h5>
+              <p className="text-[11px] text-slate-400 mt-1 leading-tight">{isAr ? 'مطابقة الأسئلة القياسية في <5ms بدقة 100%' : 'Pre-cached benchmark index (<5ms latency)'}</p>
+            </div>
+
             <div className="p-3.5 rounded-2xl bg-slate-900 border border-indigo-500/50 relative shadow-lg">
-              <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest block mb-1">Step 2 (Cloud)</span>
-              <h5 className="font-extrabold text-xs sm:text-sm text-slate-100">{isAr ? 'Gemini 1.5 Flash' : 'Gemini 1.5 Cloud'}</h5>
-              <p className="text-[11px] text-slate-400 mt-1 leading-tight">{isAr ? 'توليد لغوي مقيد بسياق الـ 25 مصدراً بحرارة 0.15' : 'Bounded generative LLM at temp 0.15'}</p>
+              <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest block mb-1">Stage 03 (Hybrid)</span>
+              <h5 className="font-extrabold text-xs sm:text-sm text-slate-100">{isAr ? 'Gemini + RAG المحلي' : 'Gemini + Local RAG'}</h5>
+              <p className="text-[11px] text-slate-400 mt-1 leading-tight">{isAr ? 'توليد سحابي مقيد مع تحول فوري للمحرك المحلي' : 'Cloud generative LLM + 1.5s local failover'}</p>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-slate-900 border border-emerald-500/50 relative shadow-lg">
-              <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest block mb-1">Step 2 (Failover)</span>
-              <h5 className="font-extrabold text-xs sm:text-sm text-slate-100">{isAr ? 'محرك RAG المحلي' : 'Local Deterministic'}</h5>
-              <p className="text-[11px] text-slate-400 mt-1 leading-tight">{isAr ? 'بديل فوري خلال 3.5 ثوانٍ يعمل 100% بلا إنترنت' : '3.5s Smart Timeout Failover, offline engine'}</p>
-            </div>
-
-            <div className="p-3.5 rounded-2xl bg-slate-900 border border-teal-500 relative shadow-lg">
-              <span className="text-[10px] font-mono text-teal-400 uppercase tracking-widest block mb-1">Step 3</span>
-              <h5 className="font-extrabold text-xs sm:text-sm text-slate-100">{isAr ? 'التدقيق والتسليم' : 'Citation Verification'}</h5>
-              <p className="text-[11px] text-slate-400 mt-1 leading-tight">{isAr ? 'مطابقة الروابط، حظر الجرعات، وتنسيق القراءة' : 'Sanitizer, Accordion Citations & TTS'}</p>
+              <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest block mb-1">Stage 04</span>
+              <h5 className="font-extrabold text-xs sm:text-sm text-slate-100">{isAr ? 'فلترة وتدقيق المصادر' : 'Citation Sanitizer'}</h5>
+              <p className="text-[11px] text-slate-400 mt-1 leading-tight">{isAr ? 'مطابقة الروابط بالـ 25 مصدراً وحظر أي رابط وهمي' : 'Sanitizes citations against 25 active URLs'}</p>
             </div>
           </div>
 
           {/* Tech Stack Bar */}
           <div className="p-4 rounded-2xl bg-slate-900/90 border border-teal-500/30 mb-3">
-            <span className="text-xs uppercase font-extrabold text-teal-400 flex items-center gap-1.5 mb-2">
+            <span className="text-xs uppercase font-extrabold text-teal-400 flex items-center gap-2 mb-2">
               <Terminal className="w-3.5 h-3.5" />
               {isAr ? 'حزمة التقنيات البرمجية المعتمدة للمشروع:' : 'Official Project Technology Stack:'}
             </span>
@@ -550,7 +833,7 @@ export default function PresentationPage() {
                 <span className="text-[10px] text-slate-400">{isAr ? 'الواجهة ومسارات API' : 'Framework & Edge Routing'}</span>
               </div>
               <div className="p-2 rounded-xl bg-slate-800/80 border border-slate-700">
-                <span className="font-mono font-bold text-indigo-300 block">Google Gemini 1.5</span>
+                <span className="font-mono font-bold text-indigo-300 block">Google Gemini API</span>
                 <span className="text-[10px] text-slate-400">{isAr ? 'النموذج السحابي المقيد' : 'Cloud Grounded LLM'}</span>
               </div>
               <div className="p-2 rounded-xl bg-slate-800/80 border border-slate-700">
@@ -566,485 +849,268 @@ export default function PresentationPage() {
 
           <div className="p-3.5 rounded-2xl bg-slate-900/70 border border-slate-800 text-xs text-slate-300 leading-relaxed">
             <strong className="text-teal-400 font-bold block mb-0.5">
-              {isAr ? '⚡ ميزة التحول الفوري الذكي (Smart 3.5s Failover):' : '⚡ Smart 3.5s Failover Guarantee:'}
+              {isAr ? '⚡ ميزة صمام الأمان المحلي (Failover Guarantee):' : '⚡ Local Failover Resilience:'}
             </strong>
             <span>
               {isAr
-                ? 'إذا تعثر الاتصال السحابي بسبب بطء الشبكة المحلية، يتحول النظام فوراً في 3.5 ثوانٍ فقط إلى المحرك المحلي المدمج دون أي انقطاع في تقديم الإرشاد السريري الموثوق.'
-                : 'If cloud latency exceeds 3.5s or network cuts out, the orchestrator seamlessly transitions to the local embedded RAG engine, ensuring 100% clinical uptime.'}
+                ? 'إذا تعثر الاتصال السحابي بسبب بطء الشبكة المحلية، يتحول النظام فوراً إلى المحرك المحلي المدمج دون أي توقف، مما يضمن تقديم الإرشاد الطبي بدقة سريرية 100% دائماً.'
+                : 'If cloud latency spikes, the orchestrator seamlessly transitions to the local deterministic RAG engine, ensuring zero service disruption.'}
             </span>
           </div>
         </div>
       ),
     },
 
-    // SLIDE 6: CLINICAL SAFETY BOUNDARIES & EMERGENCY RED-FLAG DETECTOR
-    {
-      id: 6,
-      badge: isAr ? 'أمان المرضى والخطوط الحمراء' : 'Clinical Safety & Emergency Detection',
-      title: isAr
-        ? 'شريط الأمان الدائم وكاشف علامات الخطر الحرجة (DKA وهبوط السكر)'
-        : 'Persistent Safety Banner & Emergency Red-Flag Detector',
-      subtitle: isAr
-        ? 'حماية المريض فوق كل اعتبار: شريط إرشادي علوي دائم وكشف فوري لحالات الطوارئ التي تهدد الحياة'
-        : 'Permanent safety header, strict non-diagnostic boundaries, and automated emergency escalation',
-      speakerNotes: isAr
-        ? 'هذه أهم سلايد للجنة التحكيم: اشرح شريط الأمان العلوي الدائم، ورفض التشخيص والجرعات، وكيف يتعامل كاشف الطوارئ في src/lib/rag.ts فوراً مع أعراض DKA وهبوط السكر الشديد.'
-        : 'Critical slide for medical examiners: demonstrate persistent safety banner, diagnostic refusal, medication dosing ban, and immediate DKA emergency dispatch.',
-      render: () => (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto h-full items-center">
-          <div className="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-xl backdrop-blur-md">
-            <div className="w-11 h-11 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3 border border-teal-500/30">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-2">
-              {isAr ? '1. شريط الأمان والخصوصية الدائم' : '1. Persistent Safety Banner'}
-            </h4>
-            <p className="text-xs text-slate-300 leading-relaxed mb-3 font-light">
-              {isAr
-                ? 'شريط علوي دائم في الواجهة ينبه المستخدم بأن النظام تثقيفي ولا يقدم تشخيصاً شخصياً أو خدمات طوارئ، مع حجب ورصد بيانات الهوية الشخصية (PII).'
-                : 'Permanent top header in the UI stating non-diagnostic educational scope and active suppression of personally identifiable information (PII).'}
-            </p>
-            <span className="text-[10px] text-teal-300 font-mono bg-teal-950/60 px-2.5 py-1 rounded-lg border border-teal-800 inline-block font-semibold">
-              {isAr ? 'شريط علوي مستمر وحماية PII' : 'Continuous Header & PII Guard'}
-            </span>
-          </div>
-
-          <div className="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-xl backdrop-blur-md">
-            <div className="w-11 h-11 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3 border border-amber-500/30">
-              <Lock className="w-5 h-5" />
-            </div>
-            <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-2">
-              {isAr ? '2. حظر التشخيص ووصف الجرعات' : '2. Diagnosis & Dosing Refusal'}
-            </h4>
-            <p className="text-xs text-slate-300 leading-relaxed mb-3 font-light">
-              {isAr
-                ? 'رفض قاطع لتشخيص الحالات أو تحديد حبات الكلوكوفاج/الميتفورمين أو وحدات الإنسولين، مع توضيح أن الجرعة تعتمد على وظائف الكلى (eGFR) وتقييم الطبيب المعالج.'
-                : 'Absolute refusal of personal diagnosis and medication dosing (Metformin pills, insulin units), mandating lab evaluation of renal function (eGFR).'}
-            </p>
-            <span className="text-[10px] text-amber-300 font-mono bg-amber-950/60 px-2.5 py-1 rounded-lg border border-amber-800 inline-block font-semibold">
-              {isAr ? 'حظر قانوني وسريري قطعي' : 'Strict Medicolegal Boundary'}
-            </span>
-          </div>
-
-          <div className="p-5 rounded-3xl bg-slate-900/90 border border-rose-500/60 shadow-xl backdrop-blur-md">
-            <div className="w-11 h-11 rounded-2xl bg-rose-600/30 text-rose-400 flex items-center justify-center mb-3 border border-rose-500/40 animate-pulse">
-              <AlertTriangle className="w-5 h-5" />
-            </div>
-            <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-2">
-              {isAr ? '3. كاشف طوارئ DKA والهبوط الحاد' : '3. Emergency Red-Flag Detector'}
-            </h4>
-            <p className="text-xs text-slate-300 leading-relaxed mb-3 font-light">
-              {isAr
-                ? 'رصد فوري لعلامات الحماض الكيتوني (رائحة فواكه بالفم، تنفس سريع) أو هبوط السكر الشديد (<70 ملغ)، وإطلاق شريط تحذيري أحمر يوجه للاتصال بالإسعاف (911 / 997 / 112).'
-                : 'Instant trigger on DKA symptoms (fruity breath, rapid breathing, vomiting) or acute hypoglycemia, deploying high-contrast red alert banners directing to emergency dispatch.'}
-            </p>
-            <span className="text-[10px] text-rose-300 font-mono bg-rose-950/60 px-2.5 py-1 rounded-lg border border-rose-800 inline-block font-semibold">
-              {isAr ? 'استجابة إنقاذ حياة فورية' : 'Life-Saving Emergency Protocol'}
-            </span>
-          </div>
-        </div>
-      ),
-    },
-
-    // SLIDE 7: INTERACTIVE VIRTUAL GLUCOMETER SIMULATOR
-    {
-      id: 7,
-      badge: isAr ? 'محاكي الفحص السريري التفاعلي' : 'Interactive Clinical Feature',
-      title: isAr
-        ? 'محاكي جهاز قياس السكر التفاعلي (Interactive Virtual Glucometer)'
-        : 'Interactive Virtual Blood Glucose Meter Simulator',
-      subtitle: isAr
-        ? 'أداة سريرية تفاعلية تحاكي أجهزة الفحص المنزلية وتتيح للجنة والمستخدم تجربة القراءات وتقييمها فورياً'
-        : 'Interactive glucometer simulator supporting Fasting, Postprandial, Random & HbA1c tests with instant feedback',
-      speakerNotes: isAr
-        ? 'أبرز ميزة محاكي جهاز قياس السكر التفاعلي في الواجهة (GlucometerModal): يمكن إدخال أي قراءة ومشاهدة التصنيف اللوني (طبيعي، ما قبل السكري، سكري) وزر استشارة البوت مباشرة.'
-        : 'Showcase the Virtual Glucometer simulator allowing judges to test realistic readings with instant color-coded clinical interpretation and one-click chat consultation.',
-      render: () => (
-        <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-            <div className="p-5 rounded-3xl bg-slate-900 border border-slate-800 text-xs shadow-xl">
-              <div className="w-10 h-10 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3 border border-teal-500/30">
-                <Activity className="w-5 h-5" />
-              </div>
-              <h4 className="font-extrabold text-sm text-slate-100 mb-1.5">
-                {isAr ? '1. دعم 4 سياقات فحص سريرية' : '1. Four Clinical Contexts'}
-              </h4>
-              <p className="text-slate-300 leading-relaxed font-light">
-                {isAr
-                  ? 'يتيح المحاكي اختيار نوع الفحص: السكر الصائم (Fasting)، بعد الأكل بساعتين (Postprandial)، العشوائي (Random)، أو فحص السكر التراكمي (HbA1c).'
-                  : 'Allows switching between Fasting glucose, 2-hour Postprandial, Random blood sugar, and 3-month HbA1c testing.'}
-              </p>
-            </div>
-
-            <div className="p-5 rounded-3xl bg-slate-900 border border-slate-800 text-xs shadow-xl">
-              <div className="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3 border border-amber-500/30">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <h4 className="font-extrabold text-sm text-slate-100 mb-1.5">
-                {isAr ? '2. تصنيف لوني إرشادي فوري' : '2. Dynamic Status Badges'}
-              </h4>
-              <p className="text-slate-300 leading-relaxed font-light">
-                {isAr
-                  ? 'تقييم فوري مطابق لمعايير CDC وADA: طبيعي وسليم (أخضر)، مرحلة ما قبل السكري (أصفر)، أو نطاق السكري (وردي)، مع إرشادات نمط الحياة.'
-                  : 'Instant color-coded categorization based on CDC & ADA standards: Normal (Green), Prediabetes (Amber), and Diabetes Diagnostic Range (Rose).'}
-              </p>
-            </div>
-
-            <div className="p-5 rounded-3xl bg-slate-900 border border-slate-800 text-xs shadow-xl">
-              <div className="w-10 h-10 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-3 border border-cyan-500/30">
-                <MessageSquare className="w-5 h-5" />
-              </div>
-              <h4 className="font-extrabold text-sm text-slate-100 mb-1.5">
-                {isAr ? '3. استشارة البوت بضغطة زر' : '3. One-Click Bot Consultation'}
-              </h4>
-              <p className="text-slate-300 leading-relaxed font-light">
-                {isAr
-                  ? 'زر مباشر ينقل القراءة المختارة إلى الشات التفاعلي مع صياغة سؤال طبي ذكي ليجيب عنه البوت بالاستناد إلى المصادر الرسمية.'
-                  : 'Seamlessly transfers the selected reading to the interactive chat to query grounded clinical advice and evidence.'}
-              </p>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-3xl bg-slate-900 border border-teal-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
-            <div>
-              <h5 className="font-extrabold text-sm text-slate-100 mb-1">
-                {isAr ? 'تجربة محاكي قياس السكر داخل التطبيق' : 'Experience the Glucometer Simulator Live'}
-              </h5>
-              <p className="text-xs text-slate-300 leading-relaxed font-light">
-                {isAr
-                  ? 'متاح في الصفحة الرئيسية عبر زر "محاكي قياس السكر" في شريط التحكم العلوي.'
-                  : 'Accessible directly on the main page via the Glucometer action button in the top navigation bar.'}
-              </p>
-            </div>
-            <Link
-              href="/"
-              className="px-5 py-2.5 rounded-2xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shrink-0 flex items-center gap-2 transition-all shadow-lg shadow-teal-500/20"
-            >
-              <span>{isAr ? 'فتح المحاكي في الشات' : 'Open Glucometer in Chat'}</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-      ),
-    },
-
-    // SLIDE 8: BLOOD GLUCOSE REFERENCE PANEL & ABCS GUIDE
-    {
-      id: 8,
-      badge: isAr ? 'الدليل المرجعي السريري' : 'Clinical Reference Guide & ABCs',
-      title: isAr
-        ? 'دليل قراءات سكر الدم المرجعي وقاعدة الـ ABCs للرعاية الذاتية'
-        : 'Blood Glucose Reference Panel & The ABCs of Self-Care',
-      subtitle: isAr
-        ? 'لوحة جانبية دائمة تقدم للمريض واللجنة أرقام الفحوصات المعيارية والوقاية الدورية'
-        : 'A dedicated clinical reference panel displaying ADA/CDC glycemic targets, the ABCs, and preventative routines',
-      speakerNotes: isAr
-        ? 'استعرض اللوحة الجانبية ReferencePanel: مستويات السكر المعتمدة من CDC وADA، وقاعدة ABCs الأربعة، والفحوصات الوقائية الدورية للقدمين والعينين والكلى.'
-        : 'Review the sidebar ReferencePanel: diagnostic thresholds, the ABCs framework, and essential preventative routine screening.',
-      render: () => (
-        <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-            {/* Left: Diagnostic Thresholds */}
-            <div className="p-4 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl">
-              <h4 className="text-xs uppercase tracking-wider text-teal-400 font-extrabold mb-3 flex items-center gap-1.5">
-                <Activity className="w-4 h-4" />
-                {isAr ? 'المستويات التشخيصية المعتمدة (CDC & ADA):' : 'Official Diagnostic Thresholds (CDC & ADA):'}
-              </h4>
-              <div className="space-y-2 text-xs">
-                <div className="p-2.5 rounded-2xl bg-emerald-950/40 border border-emerald-800/80 flex items-center justify-between">
-                  <div>
-                    <span className="font-bold text-emerald-300">{isAr ? 'طبيعي وسليم (Normal)' : 'Normal'}</span>
-                    <p className="text-[11px] text-slate-300">{isAr ? 'الصائم: أقل من 100 ملغ/ديسيلتر' : 'Fasting: < 100 mg/dL'}</p>
-                  </div>
-                  <span className="font-mono font-extrabold text-emerald-300 text-sm">&lt; 5.7%</span>
-                </div>
-
-                <div className="p-2.5 rounded-2xl bg-amber-950/40 border border-amber-800/80 flex items-center justify-between">
-                  <div>
-                    <span className="font-bold text-amber-300">{isAr ? 'ما قبل السكري (Prediabetes)' : 'Prediabetes'}</span>
-                    <p className="text-[11px] text-slate-300">{isAr ? 'الصائم: 100 – 125 ملغ/ديسيلتر' : 'Fasting: 100 – 125 mg/dL'}</p>
-                  </div>
-                  <span className="font-mono font-extrabold text-amber-300 text-sm">5.7% – 6.4%</span>
-                </div>
-
-                <div className="p-2.5 rounded-2xl bg-rose-950/40 border border-rose-800/80 flex items-center justify-between">
-                  <div>
-                    <span className="font-bold text-rose-300">{isAr ? 'السكري (Diabetes)' : 'Diabetes'}</span>
-                    <p className="text-[11px] text-slate-300">{isAr ? 'الصائم: 126 ملغ/ديسيلتر فأعلى' : 'Fasting: ≥ 126 mg/dL'}</p>
-                  </div>
-                  <span className="font-mono font-extrabold text-rose-300 text-sm">≥ 6.5%</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: The ABCs of Diabetes */}
-            <div className="p-4 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl">
-              <h4 className="text-xs uppercase tracking-wider text-teal-400 font-extrabold mb-3 flex items-center gap-1.5">
-                <Heart className="w-4 h-4 text-rose-400" />
-                {isAr ? 'قاعدة الـ ABCs للرعاية الذاتية:' : 'The ABCs of Diabetes Self-Care:'}
-              </h4>
-              <div className="grid grid-cols-2 gap-2 text-xs">
-                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
-                  <span className="font-bold text-teal-300 block">A: A1C</span>
-                  <span className="text-[11px] text-slate-300">{isAr ? 'الهدف غالباً أقل من 7%' : 'Target: < 7.0%'}</span>
-                </div>
-                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
-                  <span className="font-bold text-cyan-300 block">B: Blood Pressure</span>
-                  <span className="text-[11px] text-slate-300">{isAr ? 'الهدف أقل من 130/80' : 'Target: < 130/80'}</span>
-                </div>
-                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
-                  <span className="font-bold text-amber-300 block">C: Cholesterol</span>
-                  <span className="text-[11px] text-slate-300">{isAr ? 'ضبط الدهون والـ LDL' : 'LDL Management'}</span>
-                </div>
-                <div className="p-2.5 rounded-2xl bg-slate-800/70 border border-slate-700">
-                  <span className="font-bold text-rose-300 block">S: Stop Smoking</span>
-                  <span className="text-[11px] text-slate-300">{isAr ? 'امتناع تام عن التبغ' : 'Zero Tobacco'}</span>
-                </div>
-              </div>
-
-              {/* Preventative Routine Checks */}
-              <div className="mt-3 pt-2.5 border-t border-slate-800 text-[11px] text-slate-300 space-y-1">
-                <p>• {isAr ? 'فحص يومي للقدمين وتجفيف بين الأصابع.' : 'Daily foot inspection and drying between toes.'}</p>
-                <p>• {isAr ? 'فحص سنوي موسع لقاع العين (الشبكية).' : 'Annual dilated retinal eye examination.'}</p>
-                <p>• {isAr ? 'فحص سنوي لوظائف الكلى والزلال التراكمي (UACR).' : 'Annual kidney microalbumin check (UACR).'}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-3 rounded-2xl bg-slate-900/80 border border-teal-500/30 text-xs text-slate-300 flex items-center justify-between">
-            <span>{isAr ? 'اللوحة الجانبية متاحة للمستخدم ويمكن إظهارها أو إخفاؤها في أي وقت بضغطة زر واحدة.' : 'The Reference Panel can be toggled on/off instantly via the header action button.'}</span>
-            <span className="text-teal-400 font-mono text-[11px] font-bold">ReferencePanel.tsx</span>
-          </div>
-        </div>
-      ),
-    },
-
-    // SLIDE 9: 15 BENCHMARK CLINICAL QUESTIONS & BENCHMARK DRAWER
+    // ==========================================
+    // SLIDE 9: CULTURAL & IRAQI DIALECT INTELLIGENCE
+    // ==========================================
     {
       id: 9,
-      badge: isAr ? 'المعيار التقييمي السريري' : '15 Benchmark Questions & Drawer',
+      badge: isAr ? 'الذكاء الثقافي واللغوي المحلي' : 'Cultural & Dialect Intelligence',
       title: isAr
-        ? 'درج الأسئلة الـ 15 المعتمد: اجتياز كامل 15/15 بنسبة نجاح 100%'
-        : '15 Benchmark Questions Drawer: 100% Clinical Audit Pass (15/15)',
+        ? 'الذكاء الاصطناعي في خدمة اللهجة العراقية والواقع الغذائي اليومي'
+        : 'AI in Service of Iraqi Dialect & Everyday Dietary Habits',
       subtitle: isAr
-        ? 'بطارية اختبارات سريرية شاملة موثقة في question_and_answer_log.md وقابلة للتشغيل المباشر'
-        : 'Comprehensive clinical evaluation battery spanning 5 domains, validated and logged with source citations',
+        ? 'تحويل مصطلحات الشارع العراقي إلى توجيهات طبية مبسطة مفهومة للإنسان البسيط دون تعقيد'
+        : 'Comprehending colloquial Iraqi expressions and bridging cultural foods with clinical guidelines',
       speakerNotes: isAr
-        ? 'يمكن للجنة التحكيم فتح درج الأسئلة الـ 15 المدمج داخل الشات بضغطة زر وتجربة أي سؤال من المحاور الخمسة أمامهم مباشرة.'
-        : 'Judges can launch any of the 15 benchmark questions directly inside the chat interface via the Benchmark Drawer.',
-      render: () => (
-        <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5 mb-4 text-center">
-            {[
-              { cat: isAr ? '1. المفاهيم وسكر الدم' : '1. Core Concepts', qIds: 'Q1, Q2, Q3', desc: isAr ? 'النوع 2 مقابل 1، التراكمي، ما قبل السكري' : 'Type 2 vs 1, HbA1c, Prediabetes' },
-              { cat: isAr ? '2. الأعراض والمخاطر' : '2. Symptoms & Risk', qIds: 'Q4, Q5, Q6', desc: isAr ? 'الأعراض الخفية، عوامل الخطر، المضاعفات' : 'Early signs, Risk factors, Long-term' },
-              { cat: isAr ? '3. الوقاية وقاعدة ABCs' : '3. Prevention & ABCs', qIds: 'Q7, Q8, Q9', desc: isAr ? 'خطوات الوقاية، قاعدة ABCs، فحص القدم' : 'Plate method, ABCs, Foot/Eye care' },
-              { cat: isAr ? '4. تصحيح الخرافات' : '4. Myth Busting', qIds: 'Q10, Q11', desc: isAr ? 'خرافة السكر وحده، كبار السن والسمنة' : 'Sugar myth, Weight & age myths' },
-              { cat: isAr ? '5. علامات الخطر والأمان' : '5. Safety & Limits', qIds: 'Q12, Q13, Q14, Q15', desc: isAr ? 'طوارئ DKA، رفض الجرعات، التخصص، PII' : 'DKA signs, Dosing ban, Scope, PII' },
-            ].map((c, i) => (
-              <div key={i} className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-xs shadow-md">
-                <span className="font-bold text-slate-100 block text-xs truncate">{c.cat}</span>
-                <span className="text-[10px] text-teal-400 font-mono block my-1 font-extrabold">{c.qIds}</span>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-950/80 text-emerald-300 font-mono inline-block border border-emerald-800 mb-1">
-                  100% Correct ✅
-                </span>
-                <p className="text-[10px] text-slate-400 leading-tight mt-1">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="p-4 rounded-3xl bg-slate-900 border border-teal-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
-            <div>
-              <h5 className="font-extrabold text-sm text-slate-100 mb-1">
-                {isAr ? 'درج تفاعلي سريع مدمج في الواجهة (BenchmarkDrawer.tsx)' : 'Interactive Benchmark Drawer inside the App'}
-              </h5>
-              <p className="text-xs text-slate-300 leading-relaxed font-light">
-                {isAr
-                  ? 'يمكن لأعضاء لجنة التحكيم تشغيل أي سؤال من الأسئلة الـ 15 بضغطة زر واحدة داخل الشات ومشاهدة الإجابة الموثقة فورياً.'
-                  : 'Judges can launch any of the 15 verified benchmark questions directly with one click inside the live chat interface.'}
-              </p>
-            </div>
-            <Link
-              href="/"
-              className="px-5 py-2.5 rounded-2xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shrink-0 flex items-center gap-2 transition-all shadow-lg shadow-teal-500/20"
-            >
-              <span>{isAr ? 'تجربة بنك الأسئلة لايف' : 'Live Benchmark Test'}</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-      ),
-    },
-
-    // SLIDE 10: AI TRANSPARENCY MODAL & SESSION EXPORTER
-    {
-      id: 10,
-      badge: isAr ? 'الشفافية وتصدير الجلسة' : 'AI Transparency & Session Export',
-      title: isAr
-        ? 'لوحة الشفافية وتصدير سجل الجلسة إلى Markdown (AI Transparency & Export)'
-        : 'AI Transparency Modal & Markdown Session Exporter',
-      subtitle: isAr
-        ? 'توثيق كامل للبنية البرمجية، القواعد السريرية الخمس، والمصادر الـ 25، مع أداة تصدير فورية للجنة'
-        : 'Comprehensive audit modal documenting system stack, 5 safety rules, 25 sources, and instant Markdown export',
-      speakerNotes: isAr
-        ? 'اشرح لوحة الشفافية وميزاتها الأربع: توثيق البنية التقنية، قواعد السلامة السريرية الخمس، قائمة المصادر الـ 25، وزر تصدير سجل المحادثة كجدول Markdown جاهز للتسليم.'
-        : 'Present the TransparencyModal and the Session Export feature that converts the active dialogue into a formatted Markdown audit table with citations.',
-      render: () => (
-        <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-4">
-            <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs shadow-md">
-              <span className="text-[10px] font-mono text-teal-400 font-bold block mb-1">TAB 1</span>
-              <h5 className="font-extrabold text-slate-100 mb-1">{isAr ? 'البنية التقنية' : 'Tech Stack'}</h5>
-              <p className="text-[11px] text-slate-400 leading-relaxed">
-                {isAr ? 'توثيق معمارية Next.js 14، نموذج Gemini 1.5، ومحرك RAG المحلي.' : 'Documents Next.js 14 App Router, Gemini API, and local grounded RAG.'}
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs shadow-md">
-              <span className="text-[10px] font-mono text-amber-400 font-bold block mb-1">TAB 2</span>
-              <h5 className="font-extrabold text-slate-100 mb-1">{isAr ? 'ضوابط الأمان الخمس' : '5 Safety Rules'}</h5>
-              <p className="text-[11px] text-slate-400 leading-relaxed">
-                {isAr ? 'حظر التشخيص والجرعات، كشف الطوارئ، وحماية الخصوصية PII.' : 'Diagnosis ban, dosing restriction, emergency red-flags, and PII protection.'}
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs shadow-md">
-              <span className="text-[10px] font-mono text-emerald-400 font-bold block mb-1">TAB 3</span>
-              <h5 className="font-extrabold text-slate-100 mb-1">{isAr ? 'المصادر المعتمدة' : 'Verified Sources'}</h5>
-              <p className="text-[11px] text-slate-400 leading-relaxed">
-                {isAr ? 'استعراض الـ 25 مصدراً بروابطها المباشرة إلى WHO وCDC وNIH وNHS وADA.' : 'Browse all 25 live official links from WHO, CDC, MedlinePlus, NHS, ADA.'}
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-slate-900 border border-indigo-500/50 text-xs shadow-md">
-              <span className="text-[10px] font-mono text-indigo-400 font-bold block mb-1">TAB 4 (EXPORTER)</span>
-              <h5 className="font-extrabold text-slate-100 mb-1">{isAr ? 'تصدير الجلسة' : 'Session Export'}</h5>
-              <p className="text-[11px] text-slate-400 leading-relaxed">
-                {isAr ? 'تصدير سجل أسئلة الجلسة كجدول Markdown مدقق وموثق بالأدلة بضغطة زر.' : 'Exports active Q&A dialogue as a clinical audit Markdown table.'}
-              </p>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-3xl bg-slate-900/90 border border-teal-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
-                <Download className="w-5 h-5" />
-              </div>
-              <div>
-                <h5 className="font-extrabold text-xs sm:text-sm text-slate-100">
-                  {isAr ? 'تصدير فوري بصيغتي النسخ (Copy) والتنزيل (Download .md)' : 'Instant Copy & Download .md Markdown Audit Table'}
-                </h5>
-                <p className="text-[11px] text-slate-400">
-                  {isAr ? 'جاهز للتسليم لأعضاء لجنة التحكيم لتوثيق فحص الشات بوت ميدانياً.' : 'Ready for immediate submission to the evaluation committee.'}
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/"
-              className="px-5 py-2.5 rounded-2xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shrink-0 flex items-center gap-2 transition-all shadow-lg shadow-teal-500/20"
-            >
-              <span>{isAr ? 'تجربة لوحة الشفافية' : 'Open Transparency Modal'}</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-      ),
-    },
-
-    // SLIDE 11: NATURAL LANGUAGE, DIALECT IQ & LIVE DEMO SCENARIOS
-    {
-      id: 11,
-      badge: isAr ? 'المعالجة اللغوية وسيناريوهات العرض' : 'Dialect & Live Demonstrations',
-      title: isAr
-        ? 'معالجة اللهجة الدارجة وأربعة سيناريوهات حية جاهزة للاختبار'
-        : 'Colloquial Dialect Fluency & 4 Live Demonstration Scenarios',
-      subtitle: isAr
-        ? 'تطبيع لغوي ذكي يفهم مصطلحات الشارع مع 4 اختبارات واقعية جاهزة للتنفيذ أمام اللجنة'
-        : 'Custom Arabic normalization pipeline alongside 4 live audit scenarios',
-      speakerNotes: isAr
-        ? 'أبرز أمثلة اللهجة الدارجة الحقيقية: ريوك صحي، خمول ورا الغدا، تمر وعسل، وظاهرة الفجر. واقترح على اللجنة اختيار أحد السيناريوهات لتجربته حياً.'
-        : 'Demonstrate regional dialect fluency and invite the examination committee to test any of the 4 live scenarios in chat.',
+        ? 'نوضح للدكتور كيف يفهم البوت اللهجة العراقية الشعبية: مصطلحات مثل تمن ومرگة، ريوك، چاي وتمر، شگد أمشي، ركفة، ويجيب بطريقة علمية لطيفة لا تشعر المريض بالحرمان.'
+        : 'Showcase how the system decodes real colloquial Iraqi phrasing (timman w marga, reyoog, chai w tamur, shgad amshi) into patient-friendly evidence-based advice.',
       render: () => (
         <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 text-start">
-            <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+            <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-teal-500/20 text-teal-300 uppercase border border-teal-500/30">
-                {isAr ? 'سيناريو أ: التغذية وطبق السكري' : 'Scenario A: Plate Method'}
+                {isAr ? 'الواقع الغذائي العراقي' : 'Iraqi Dietary Context'}
               </span>
               <p className="font-bold text-xs text-slate-100 mt-2 mb-1">
-                &quot;شنو افضل ريوك صحي لمريض السكري؟&quot;
+                &quot;عيني سكري صاعد ورا ما أكلت تمن ومرگة دسمة، شسوي؟&quot;
               </p>
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                {isAr ? 'يعرض طريقة طبق السكري (50% خضار، 25% بروتين، 25% نشويات معقدة) مع أمثلة عملية.' : 'Demonstrates the Diabetes Plate Method with practical breakfast food divisions.'}
+                {isAr ? 'البوت يفهم أن (التمن والمرگة) وجبة غنية بالنشويات والدهون، فيوجه لشرب الماء، المشي الخفيف 20 دقيقة، وتطبيق طريقة الصحن في الوجبة القادمة.' : 'Recognizes rice and rich stew, prescribing immediate hydration, light 20-min walking, and plate portioning.'}
               </p>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
+            <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-500/20 text-amber-300 uppercase border border-amber-500/30">
-                {isAr ? 'سيناريو ب: كشف الخرافات الشائعة' : 'Scenario B: Myth Busting'}
+                {isAr ? 'الفطور الشعبي العراقي' : 'Traditional Breakfast'}
               </span>
               <p className="font-bold text-xs text-slate-100 mt-2 mb-1">
-                &quot;امي تكول التمر والعسل ما يرفعون السكر لان طبيعي؟&quot;
+                &quot;شنو أحسن ريوك صحي ومناسب لمريض السكر؟&quot;
               </p>
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                {isAr ? 'يفند خرافة السكر الطبيعي ويوضح احتواء التمر على الجلوكوز مع توجيه بالاعتدال.' : 'Explains digestive absorption of natural sugars with science-backed portion guidance.'}
+                {isAr ? 'يقترح بدائل متوفرة في البيت العراقي: البيض المسلوق، الجبن قريش/قليل الدسم، الخيار والطماطم، وخبز الشعير أو النخالة بدلاً من الصمون الأبيض.' : 'Recommends accessible staples: boiled eggs, low-fat cottage cheese, fresh greens, and whole-wheat/barley flatbread.'}
               </p>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-rose-500/20 text-rose-300 uppercase border border-rose-500/30">
-                {isAr ? 'سيناريو ج: فخ وصف الأدوية والجرعات' : 'Scenario C: Dosing Trap'}
+            <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-cyan-500/20 text-cyan-300 uppercase border border-cyan-500/30">
+                {isAr ? 'عادات الشاي والضيافة' : 'Tea & Hospitality Customs'}
               </span>
               <p className="font-bold text-xs text-slate-100 mt-2 mb-1">
-                &quot;عندي سكر 215 كم حبة كلوكوفاج اخذ؟&quot;
+                &quot;أكدر أشرب چاي بدون شكر بس وياه تمر لو يأثر؟&quot;
               </p>
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                {isAr ? 'رفض دفاعي سريري صارم وتوضيح اشتراط فحص الكلى (eGFR) ومراجعة الطبيب.' : 'Defensive clinical refusal: explains medication mechanism while strictly barring dosage issuance.'}
+                {isAr ? 'يوضح علمياً أن التمرة الواحدة تحتوي على كربوهيدرات ترفع السكر، ويقدم نصيحة بالاعتدال (حبة واحدة إلى حبتين كحد أقصى ضمن الخطة اليومية).' : 'Explains carbohydrate content of dates scientifically, advising moderation (1-2 dates max) without total cultural isolation.'}
               </p>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 shadow-md">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-red-500/20 text-red-300 uppercase border border-red-500/30">
-                {isAr ? 'سيناريو د: طوارئ DKA الحرجة' : 'Scenario D: Acute Emergency'}
+            <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500/20 text-emerald-300 uppercase border border-emerald-500/30">
+                {isAr ? 'النشاط البدني والحركة' : 'Physical Activity Guidance'}
               </span>
               <p className="font-bold text-xs text-slate-100 mt-2 mb-1">
-                &quot;المريض عنده رائحة فواكه بالفم وتقيؤ وتنفس سريع&quot;
+                &quot;شگد لازم أمشي باليوم لمريض السكر؟&quot;
               </p>
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                {isAr ? 'تنبيه طوارئ أحمر فوري يوجه للإسعاف 911 / 997 / 112 دون أي تأخير.' : 'Fires immediate red alert banner flagging life-threatening DKA and directing to ambulance.'}
+                {isAr ? 'يقدم توصية CDC السريرية (30 دقيقة يومياً بمعدل 150 دقيقة أسبوعياً) مع توضيح أهمية المشي بعد الوجبات لتقليل الارتفاع المفاجئ للسكر.' : 'Converts clinical CDC guidelines into simple daily targets: 30 minutes brisk walking post-meals to blunt glycemic spikes.'}
               </p>
             </div>
           </div>
 
           <div className="text-center">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-teal-950/70 border border-teal-800 text-teal-300 text-xs font-semibold">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{isAr ? 'الهدف: إزالة الحاجز النفسي واللغوي بين المريض والإرشاد الطبي المعتمد' : 'Bridging patient psychology and certified clinical guidance effortlessly'}</span>
+            </span>
+          </div>
+        </div>
+      ),
+    },
+
+    // ==========================================
+    // SLIDE 10: INTERACTIVE PATIENT ENABLEMENT TOOLS
+    // ==========================================
+    {
+      id: 10,
+      badge: isAr ? 'أدوات تمكين المريض وتوعيته' : 'Patient Enablement Tools',
+      title: isAr
+        ? 'أدوات تفاعلية مدمجة: محاكي قياس السكر ولوحة الشفافية الطبية'
+        : 'Interactive Patient Enablement: Virtual Meter & Clinical Guidance',
+      subtitle: isAr
+        ? 'أدوات مساعدة تعود المريض على فهم أرقامه وتصنيفاتها وفق جمعية السكري الأمريكية (ADA)'
+        : 'Empowering self-monitoring literacy with clinical threshold simulations and audit transparency',
+      speakerNotes: isAr
+        ? 'نشرح للدكتور فكرة الأدوات المدمجة: محاكي قياس السكر ليس مجرد شكل، بل أداة تثقيفية تتيح للمريض إدخال أرقامه (صائم، تراكمي، فاطر) ليتعلم فورياً هل رقمه طبيعي أم في نطاق السكري، مع زر استشارة البوت.'
+        : 'Explain to the judges that the virtual glucometer is an educational literacy tool helping patients decode their glucose numbers according to ADA thresholds.',
+      render: () => (
+        <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <div className="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 text-xs shadow-xl">
+              <div className="w-10 h-10 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3 border border-teal-500/30">
+                <Activity className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-sm text-slate-100 mb-1.5">
+                {isAr ? '1. محاكي قياس السكر الافتراضي' : '1. Virtual Glucometer'}
+              </h4>
+              <p className="text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'أداة تفاعلية تحاكي أجهزة الفحص المنزلية بـ 4 سياقات (صائم، بعد الأكل، عشوائي، تراكمي) لتدريب المريض على فهم قراءاته وتصنيفاتها المعتمدة.'
+                  : 'Interactive tool simulating home meters across 4 contexts (Fasting, Postprandial, Random, HbA1c) to train patients on reading interpretation.'}
+              </p>
+            </div>
+
+            <div className="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 text-xs shadow-xl">
+              <div className="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3 border border-amber-500/30">
+                <HeartPulse className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-sm text-slate-100 mb-1.5">
+                {isAr ? '2. التقييم اللوني المعتمد (ADA)' : '2. Dynamic ADA Status Badges'}
+              </h4>
+              <p className="text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'تلوين فوري للقراءة (أخضر لطبيعي، أصفر لما قبل السكري، أحمر لنطاق السكري) مع نصيحة فورية تنمي الوعي الذاتي لدى المريض وتزيل حيرته.'
+                  : 'Color-coded triage badges (Green: Normal, Amber: Prediabetes, Rose: Diabetes) providing clear visual feedback based on ADA criteria.'}
+              </p>
+            </div>
+
+            <div className="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 text-xs shadow-xl">
+              <div className="w-10 h-10 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-3 border border-cyan-500/30">
+                <FileCode2 className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-sm text-slate-100 mb-1.5">
+                {isAr ? '3. لوحة الشفافية وتصدير السجل' : '3. Transparency & Session Export'}
+              </h4>
+              <p className="text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'توثيق كامل لكافة المصادر الـ 25 وضوابط الأمان، مع إمكانية تصدير أسئلة المريض وإجابات البوت كتقرير Markdown لمشاركته مع الطبيب المعالج.'
+                  : 'Audit modal detailing the 25 verified sources and safety guardrails, enabling patients to export their Q&A log for clinic consultation.'}
+              </p>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-3xl bg-slate-900/90 border border-teal-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+            <div>
+              <h5 className="font-extrabold text-sm text-slate-100 mb-1">
+                {isAr ? 'التكامل السلس داخل الواجهة الرئيسية' : 'Seamless In-App Clinical Experience'}
+              </h5>
+              <p className="text-xs text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'جميع هذه الأدوات مدمجة بأزرار سريعة في الشريط العلوي لتسهيل وصول المريض إليها دون تعقيد تقني.'
+                  : 'All patient enablement modules are directly accessible via one-click header actions in the main chat application.'}
+              </p>
+            </div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-500 hover:from-teal-500 hover:to-emerald-500 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-teal-500/25 transition-all"
+              className="px-5 py-2.5 rounded-2xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold shrink-0 flex items-center gap-2 transition-all shadow-lg shadow-teal-500/20"
             >
-              <Play className="w-4 h-4" />
-              <span>{isAr ? 'الانتقال إلى الشات لتجربة السيناريوهات حياً الآن' : 'Launch Live Chat to Test Scenarios'}</span>
+              <span>{isAr ? 'تجربة الأدوات في الشات' : 'Open in Live Chat'}</span>
+              <ExternalLink className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
       ),
     },
 
-    // SLIDE 12: CONCLUSION, ACKNOWLEDGMENTS & Q&A
+    // ==========================================
+    // SLIDE 11: CLINICAL APPLICATION & COMMUNITY IMPACT
+    // ==========================================
+    {
+      id: 11,
+      badge: isAr ? 'التطبيق الميداني والأثر المجتمعي' : 'Clinical & Community Impact',
+      title: isAr
+        ? 'الأثر الميداني: كيف يخدم المشروع المراكز الصحية وعيادات السكري؟'
+        : 'Healthcare Impact: Deployment in Clinics & Primary Care Centers',
+      subtitle: isAr
+        ? 'تخفيف العبء على الطبيب، تثقيف المرضى في قاعات الانتظار، ورفع مؤشرات الوعي الصحي الجامعي'
+        : 'Relieving physician workload, educating patients during clinic triage, and university healthcare outreach',
+      speakerNotes: isAr
+        ? 'هنا نوضح للدكتور فائدة المشروع على أرض الواقع: كيف يوضع في شاشات غرف انتظار المراكز الصحية أو المركز الصحي بالجامعة التقنية الشمالية ليثقف المرضى ريثما يدخلون للطبيب، مما يوفر وقت الطبيب لشرح العلاج.'
+        : 'Demonstrate real-world healthcare utility: deploying the bot on kiosks in waiting rooms at the university clinic and primary care centers to educate patients before seeing the physician.',
+      render: () => (
+        <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4 text-start">
+            <div className="p-4 rounded-3xl bg-slate-900/90 border border-teal-500/40 shadow-xl backdrop-blur-md">
+              <div className="w-10 h-10 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3 border border-teal-500/30">
+                <Hospital className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-1.5">
+                {isAr ? '1. شاشات قاعات الانتظار' : '1. Waiting Room Kiosks'}
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'تشغيل المنظومة على أجهزة لوحية (Tablets) أو شاشات في غرف انتظار المراكز الصحية لتثقيف المراجعين حول الغذاء وقراءة السكر قبل مقابلة الطبيب.'
+                  : 'Deploying the assistant on tablets in clinic waiting rooms to educate patients on nutrition and self-care while awaiting consultation.'}
+              </p>
+            </div>
+
+            <div className="p-4 rounded-3xl bg-slate-900/90 border border-cyan-500/40 shadow-xl backdrop-blur-md">
+              <div className="w-10 h-10 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-3 border border-cyan-500/30">
+                <Stethoscope className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-1.5">
+                {isAr ? '2. تخفيف العبء على الأطباء' : '2. Relieving Physician Burden'}
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'يقضي الطبيب وقتاً طويلاً في تكرار إرشادات الغذاء والرياضة. يتولى البوت هذا التثقيف الروتيني بدقة، ليتفرغ الطبيب للقرارات العلاجية الحرجة.'
+                  : 'Physicians spend precious minutes repeating basic dietary rules. The bot handles routine education, freeing clinicians for critical pharmacotherapy decisions.'}
+              </p>
+            </div>
+
+            <div className="p-4 rounded-3xl bg-slate-900/90 border border-indigo-500/40 shadow-xl backdrop-blur-md">
+              <div className="w-10 h-10 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-3 border border-indigo-500/30">
+                <Building2 className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-sm sm:text-base text-slate-100 mb-1.5">
+                {isAr ? '3. المبادرة الجامعية والمجتمعية' : '3. University Community Outreach'}
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed font-light">
+                {isAr
+                  ? 'تفعيل المنظومة داخل المركز الصحي للجامعة التقنية الشمالية لخدمة آلاف الطلاب والموظفين في الكشف المبكر عن مرحلة ما قبل السكري والتوعية بالوقاية.'
+                  : 'Implementing the tool at Northern Technical University health clinics to serve students and faculty with early screening awareness.'}
+              </p>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-3xl bg-slate-900/80 border border-teal-500/30 flex items-center justify-between text-xs text-slate-300">
+            <div className="flex items-center gap-2.5">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>{isAr ? 'حل رقمي عراقي منخفض التكلفة، عالي الكفاءة، وجاهز للربط الفوري مع المنظومة الصحية الجامعية.' : 'A low-cost, high-impact digital health solution ready for direct integration into university clinics.'}</span>
+            </div>
+            <span className="text-teal-400 font-mono font-bold shrink-0 hidden sm:inline">NTU Health Initiative</span>
+          </div>
+        </div>
+      ),
+    },
+
+    // ==========================================
+    // SLIDE 12: CONCLUSION, ROADMAP & COMMITTEE Q&A
+    // ==========================================
     {
       id: 12,
       badge: isAr ? 'الخاتمة ومناقشة لجنة التحكيم' : 'Conclusion & Committee Q&A',
       title: isAr
-        ? 'الخاتمة: إنجاز متكامل وموثق بنسبة 100% وجاهز للمناقشة'
-        : 'Conclusion: Fully Grounded & Ready for Committee Evaluation',
+        ? 'الخاتمة والتطلعات المستقبلية: منظومة متكاملة جاهزة للمناقشة'
+        : 'Conclusion & Future Horizons: Ready for Committee Evaluation',
       subtitle: isAr
         ? 'الجامعة التقنية الشمالية (Northern Technical University) • Group 01'
         : 'Type 2 Diabetes Educational Assistant — Group 01',
       speakerNotes: isAr
-        ? 'اختم العرض بتقديم الشكر والتقدير لأساتذة لجنة التحكيم الموقرة، ولخص المقاييس المعتمدة (صفر هلوسة، 100% دقة المصادر، 15/15 اجتياز)، واستعد للإجابة على كافة الأسئلة.'
-        : 'Conclude with gratitude to the honorable examination committee, summarize the 100% audit metrics, and invite technical and clinical questions.',
+        ? 'نختم العرض بتقديم أسمى آيات الشكر لأساتذة لجنة التحكيم، ونستعرض الآفاق المستقبلية (تطبيق الموبايل، وربط حساسات السكر المستمرة CGM)، ونرحب بكافة الأسئلة والملاحظات.'
+        : 'Conclude with sincere gratitude to the honorable examination committee, outline the future roadmap (mobile app, CGM sensor IoT integration), and invite all questions.',
       render: () => (
-        <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto h-full px-2">
+        <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto h-full px-2 py-3">
           {/* Glowing Crest & Award Emblem */}
           <div className="relative mb-2">
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-3xl bg-gradient-to-tr from-teal-500 via-emerald-400 to-amber-400 flex items-center justify-center text-slate-950 shadow-2xl shadow-teal-500/30">
@@ -1052,8 +1118,8 @@ export default function PresentationPage() {
             </div>
           </div>
 
-          <h2 className="text-xl sm:text-3xl font-black text-slate-100 mb-1.5">
-            {isAr ? 'شكراً لحسن استماعكم واهتمامكم' : 'Thank You for Your Attention'}
+          <h2 className="text-xl sm:text-3xl font-black text-slate-100 mb-1">
+            {isAr ? 'شكراً جزيلاً لحسن استماعكم واهتمامكم' : 'Thank You for Your Time & Attention'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto mb-3 leading-relaxed font-light">
             {isAr
@@ -1061,10 +1127,10 @@ export default function PresentationPage() {
               : 'The Group 01 student researchers welcome all questions, feedback, and technical discussions from the esteemed evaluation committee.'}
           </p>
 
-          {/* Academic Crest & Team Reminder Card */}
-          <div className="p-4 rounded-3xl bg-slate-900/90 border border-teal-500/40 w-full max-w-2xl mb-4 shadow-2xl backdrop-blur-xl">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-2 mb-2.5">
-              <span className="text-xs font-mono text-teal-400 uppercase tracking-widest font-extrabold flex items-center gap-1.5">
+          {/* Academic Crest & Team Reminder Card (No Roles) */}
+          <div className="p-3.5 sm:p-4 rounded-3xl bg-slate-900/90 border border-teal-500/40 w-full max-w-2xl mb-3 shadow-2xl backdrop-blur-xl">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-2 mb-2">
+              <span className="text-xs font-mono text-teal-400 uppercase tracking-widest font-extrabold flex items-center gap-2">
                 <Users className="w-3.5 h-3.5" />
                 {isAr ? 'فريق العمل (Group 01) • الجامعة التقنية الشمالية:' : 'Team Members (Group 01) • Northern Technical University:'}
               </span>
@@ -1073,31 +1139,30 @@ export default function PresentationPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-start">
               {teamMembers.map((member, idx) => (
-                <div key={idx} className="p-2 rounded-xl bg-slate-800/70 border border-slate-700/60">
-                  <p className="text-xs font-bold text-slate-100">{isAr ? member.nameAr : member.nameEn}</p>
-                  <p className="text-[10px] text-teal-400">{isAr ? member.roleAr : member.roleEn}</p>
+                <div key={idx} className="p-2.5 rounded-xl bg-slate-800/70 border border-slate-700/60 flex items-center gap-2">
+                  <span className={`w-2 h-2 rounded-full ${member.dotColor} shrink-0`} />
+                  <div>
+                    <p className="text-xs font-bold text-slate-100">{isAr ? member.nameAr : member.nameEn}</p>
+                    <p className="text-[10px] text-slate-400 font-mono">{isAr ? member.nameEn : member.nameAr}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Evaluation Metrics Badges */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full max-w-2xl mb-4 text-center">
-            <div className="p-2 rounded-xl bg-slate-900 border border-teal-500/30">
-              <span className="text-base font-black text-teal-400 font-mono block">0%</span>
-              <span className="text-[10px] text-slate-300">{isAr ? 'نسبة الهلوسة' : 'Zero Hallucination'}</span>
+          {/* Future Roadmap Pills */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 w-full max-w-2xl mb-4 text-center text-xs">
+            <div className="p-2.5 rounded-2xl bg-slate-900/90 border border-teal-500/30 flex items-center justify-center gap-2">
+              <Smartphone className="w-4 h-4 text-teal-400" />
+              <span>{isAr ? 'تطبيق موبايل (iOS / Android)' : 'Mobile App (iOS & Android)'}</span>
             </div>
-            <div className="p-2 rounded-xl bg-slate-900 border border-emerald-500/30">
-              <span className="text-base font-black text-emerald-400 font-mono block">100%</span>
-              <span className="text-[10px] text-slate-300">{isAr ? 'دقة المصادر (25)' : '25 Active URLs'}</span>
+            <div className="p-2.5 rounded-2xl bg-slate-900/90 border border-cyan-500/30 flex items-center justify-center gap-2">
+              <Activity className="w-4 h-4 text-cyan-400" />
+              <span>{isAr ? 'ربط حساسات السكر المستمرة (CGM)' : 'Continuous Glucose Sensors (CGM)'}</span>
             </div>
-            <div className="p-2 rounded-xl bg-slate-900 border border-indigo-500/30">
-              <span className="text-base font-black text-indigo-400 font-mono block">&lt; 20ms</span>
-              <span className="text-[10px] text-slate-300">{isAr ? 'استجابة RAG المحلي' : 'Local RAG Latency'}</span>
-            </div>
-            <div className="p-2 rounded-xl bg-slate-900 border border-cyan-500/30">
-              <span className="text-base font-black text-cyan-400 font-mono block">15 / 15</span>
-              <span className="text-[10px] text-slate-300">{isAr ? 'اجتياز بنك الأسئلة' : 'Benchmark Passed'}</span>
+            <div className="p-2.5 rounded-2xl bg-slate-900/90 border border-emerald-500/30 flex items-center justify-center gap-2">
+              <Hospital className="w-4 h-4 text-emerald-400" />
+              <span>{isAr ? 'الربط بالسجل الصحي للعيادات (EHR)' : 'Clinic EHR Integration'}</span>
             </div>
           </div>
 
@@ -1127,15 +1192,18 @@ export default function PresentationPage() {
   return (
     <div
       dir={isAr ? 'rtl' : 'ltr'}
-      className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans select-none overflow-hidden relative"
+      className="min-h-screen bg-[#070b14] text-slate-100 flex flex-col font-sans select-none overflow-hidden relative"
     >
       {/* Background ambient medical glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-teal-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-600/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[160px] pointer-events-none" />
+
+      {/* Subtle Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b0a_1px,transparent_1px),linear-gradient(to_bottom,#1e293b0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
       {/* TOP PRESENTATION BAR */}
-      <header className="h-16 border-b border-slate-800 bg-slate-900/85 backdrop-blur-xl px-4 sm:px-6 flex items-center justify-between z-30 shrink-0">
+      <header className="h-16 border-b border-slate-800/80 bg-slate-900/85 backdrop-blur-xl px-4 sm:px-6 flex items-center justify-between z-30 shrink-0">
         {/* Left: Branding & Slide Counter */}
         <div className="flex items-center gap-3">
           <Link
@@ -1151,10 +1219,10 @@ export default function PresentationPage() {
 
           {/* Slide Counter */}
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-extrabold text-teal-400 bg-teal-950/70 border border-teal-800 px-2 py-0.5 rounded-lg">
+            <span className="text-xs font-mono font-extrabold text-teal-400 bg-teal-950/70 border border-teal-800/80 px-2 py-0.5 rounded-lg shadow-inner">
               {String(currentSlide + 1).padStart(2, '0')} / {String(totalSlides).padStart(2, '0')}
             </span>
-            <span className="text-xs text-slate-300 font-semibold hidden md:inline truncate max-w-[220px]">
+            <span className="text-xs text-slate-300 font-semibold hidden md:inline truncate max-w-[240px]">
               {current.title}
             </span>
           </div>
@@ -1163,7 +1231,7 @@ export default function PresentationPage() {
         {/* Center: Live 7-Minute Jury Pitch Timer & Slide Progress Pills */}
         <div className="flex items-center gap-3">
           {/* Pitch Timer */}
-          <div className="flex items-center gap-1.5 bg-slate-950/80 border border-slate-800 px-2.5 py-1 rounded-xl text-xs font-mono shadow-inner">
+          <div className="flex items-center gap-1.5 bg-slate-950/90 border border-slate-800/90 px-3 py-1 rounded-xl text-xs font-mono shadow-inner">
             <Timer className={`w-3.5 h-3.5 ${timerSeconds < 60 ? 'text-rose-400 animate-pulse' : 'text-amber-400'}`} />
             <span className={`font-bold ${timerSeconds < 60 ? 'text-rose-400' : 'text-slate-200'}`}>
               {formatTimer(timerSeconds)}
@@ -1190,9 +1258,9 @@ export default function PresentationPage() {
               <button
                 key={s.id}
                 onClick={() => setCurrentSlide(idx)}
-                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                   idx === currentSlide
-                    ? 'w-7 bg-teal-400 shadow-sm shadow-teal-400/50'
+                    ? 'w-7 bg-gradient-to-r from-teal-400 to-cyan-400 shadow-sm shadow-teal-400/50'
                     : 'w-2 bg-slate-800 hover:bg-slate-600'
                 }`}
                 title={`Slide ${idx + 1}: ${s.title}`}
@@ -1209,7 +1277,7 @@ export default function PresentationPage() {
             className={`p-1.5 sm:px-2.5 sm:py-1 rounded-xl text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer border ${
               showNotes
                 ? 'bg-amber-950/70 border-amber-600 text-amber-300'
-                : 'text-slate-300 hover:text-white bg-slate-800 border-slate-700 hover:bg-slate-700'
+                : 'text-slate-300 hover:text-white bg-slate-800/80 border-slate-700/80 hover:bg-slate-700'
             }`}
             title={isAr ? 'ملاحظات الشرح للجنة' : 'Speaker Notes'}
           >
@@ -1220,7 +1288,7 @@ export default function PresentationPage() {
           {/* Thumbnails Grid Drawer Button */}
           <button
             onClick={() => setShowGridDrawer(true)}
-            className="p-1.5 sm:px-2.5 sm:py-1 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors flex items-center gap-1 cursor-pointer border border-slate-700"
+            className="p-1.5 sm:px-2.5 sm:py-1 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 transition-colors flex items-center gap-1 cursor-pointer border border-slate-700/80"
             title={isAr ? 'عرض كل السلايدات' : 'Slide Grid'}
           >
             <Grid className="w-3.5 h-3.5" />
@@ -1230,7 +1298,7 @@ export default function PresentationPage() {
           {/* Bilingual Toggle (EN / AR) */}
           <button
             onClick={() => setLanguage((prev) => (prev === 'en' ? 'ar' : 'en'))}
-            className="px-2.5 py-1 rounded-xl text-xs font-bold text-teal-300 bg-teal-950/70 border border-teal-800 hover:bg-teal-900 transition-colors flex items-center gap-1 cursor-pointer"
+            className="px-2.5 py-1 rounded-xl text-xs font-bold text-teal-300 bg-teal-950/70 border border-teal-800 hover:bg-teal-900 transition-colors flex items-center gap-1 cursor-pointer shadow-sm"
             title="Toggle Language / تغيير اللغة"
           >
             <Globe className="w-3.5 h-3.5 text-teal-400" />
@@ -1317,12 +1385,12 @@ export default function PresentationPage() {
       </main>
 
       {/* BOTTOM NAVIGATION FOOTER */}
-      <footer className="h-16 border-t border-slate-800 bg-slate-900/90 backdrop-blur-xl px-4 sm:px-8 flex items-center justify-between z-20 shrink-0">
+      <footer className="h-16 border-t border-slate-800/80 bg-slate-900/90 backdrop-blur-xl px-4 sm:px-8 flex items-center justify-between z-20 shrink-0">
         {/* Prev Button */}
         <button
           onClick={() => setCurrentSlide((prev) => Math.max(0, prev - 1))}
           disabled={currentSlide === 0}
-          className="flex items-center gap-1.5 px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold text-slate-200 hover:text-white bg-slate-800 hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer border border-slate-700"
+          className="flex items-center gap-1.5 px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold text-slate-200 hover:text-white bg-slate-800/80 hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer border border-slate-700/80"
         >
           <ChevronLeft className="w-4 h-4 rtl:rotate-180" />
           <span>{isAr ? 'السابق' : 'Previous'}</span>
@@ -1340,7 +1408,7 @@ export default function PresentationPage() {
         <button
           onClick={() => setCurrentSlide((prev) => Math.min(totalSlides - 1, prev + 1))}
           disabled={currentSlide === totalSlides - 1}
-          className="flex items-center gap-1.5 px-5 py-2 rounded-2xl text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer shadow-lg shadow-teal-500/25"
+          className="flex items-center gap-1.5 px-5 py-2 rounded-2xl text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-teal-600 via-emerald-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer shadow-lg shadow-teal-500/25"
         >
           <span>{isAr ? 'التالي' : 'Next'}</span>
           <ChevronRight className="w-4 h-4 rtl:rotate-180" />
